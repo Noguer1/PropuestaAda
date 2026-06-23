@@ -171,12 +171,6 @@ button{font-family:inherit;cursor:pointer}
   background:linear-gradient(to bottom,var(--t0),transparent);
   border-radius:2px;
 }
-.hero-scroll{
-  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:10px;opacity:.45;
-}
-.hero-scroll span{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--tm)}
-.hero-scroll .line{width:1px;height:44px;background:var(--g3)}
 
 /* ═══════════════════════════════════════════
    MARQUEE
@@ -436,6 +430,21 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
 .wa-float svg{position:relative;z-index:1}
 
 /* ═══════════════════════════════════════════
+   LANG TOGGLE
+═══════════════════════════════════════════ */
+.lang-toggle{display:flex;align-items:center;gap:3px}
+.lang-btn{background:none;border:none;font-size:11.5px;font-weight:700;letter-spacing:1.5px;color:var(--tl);cursor:pointer;padding:5px 5px;transition:color .2s;font-family:'Outfit',sans-serif}
+.lang-btn.active{color:var(--t0)}
+.lang-btn:hover{color:var(--tx)}
+.lang-sep{font-size:10px;color:var(--c2);user-select:none;line-height:1}
+.lang-btn-lg{font-size:13px;letter-spacing:2px;padding:7px 7px}
+.lang-toggle-mobile{display:flex;align-items:center;gap:6px;margin-top:18px;padding-top:18px;border-top:1px solid rgba(45,74,62,.08);width:100%;justify-content:center}
+.lock-card .lang-btn{color:rgba(200,219,201,.38);font-size:12px;letter-spacing:2px}
+.lock-card .lang-btn.active{color:var(--t2)}
+.lock-card .lang-btn:hover{color:rgba(200,219,201,.8)}
+.lock-card .lang-sep{color:rgba(200,219,201,.18)}
+
+/* ═══════════════════════════════════════════
    STAR SVG (reusable via JS)
 ═══════════════════════════════════════════ */
 .star-svg{display:inline-block;width:14px;height:14px;vertical-align:middle}
@@ -541,7 +550,6 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
   .hero-photo-caption strong{font-size:12px}
   .hero-photo-caption small{font-size:10px}
   .hero-accent-line{display:none}
-  .hero-scroll{display:none}
 
   /* ── MARQUEE ── */
   .mitem span{font-size:12px}
@@ -787,26 +795,32 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
     <div class="lock-logo">
       <img src="logoada.png" alt="ADA Centro Psicológico" />
     </div>
-    <h1 class="lock-title">Propuesta de <em>Rediseño Web</em> de ADA Psicología</h1>
-    <p class="lock-sub">Acceso privado y exclusivo para el equipo de la clínica</p>
+    <h1 class="lock-title" data-i18n-html="lock.title">Propuesta de <em>Rediseño Web</em> de ADA Psicología</h1>
+    <p class="lock-sub" data-i18n="lock.sub">Acceso privado y exclusivo para el equipo de la clínica</p>
     <div class="lock-input-wrap">
       <input
         id="lock-pass"
         class="lock-input"
         type="password"
         placeholder="Introduce la contraseña..."
+        data-i18n-placeholder="lock.placeholder"
         autocomplete="current-password"
         autofocus
       />
-      <button class="lock-btn" id="lock-btn" type="button">Entrar a la propuesta</button>
-      <p class="lock-error" id="lock-error">Contraseña incorrecta. Por favor, verifica el código.</p>
+      <button class="lock-btn" id="lock-btn" type="button" data-i18n="lock.btn">Entrar a la propuesta</button>
+      <p class="lock-error" id="lock-error" data-i18n="lock.error">Contraseña incorrecta. Por favor, verifica el código.</p>
+    </div>
+    <div class="lang-toggle" style="justify-content:center;margin-top:22px">
+      <button class="lang-btn lang-btn-lg active" data-lang="es">ES</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn lang-btn-lg" data-lang="en">EN</button>
     </div>
     <footer class="lock-footer">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
         <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
       </svg>
-      Entorno Seguro: Este enlace es privado y confidencial.
+      <span data-i18n="lock.footer">Entorno Seguro: Este enlace es privado y confidencial.</span>
     </footer>
   </div>
 </div>
@@ -818,18 +832,23 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
       <img src="logoada.png" alt="ADA Centro Psicológico" style="height:48px;width:auto;display:block">
     </a>
     <div class="nav-links">
-      <a href="#services" class="nl">Servicios</a>
-      <a href="#approach" class="nl">Enfoque</a>
-      <a href="#team"     class="nl">Equipo</a>
+      <a href="#services" class="nl" data-i18n="nav.services">Servicios</a>
+      <a href="#approach" class="nl" data-i18n="nav.approach">Enfoque</a>
+      <a href="#team"     class="nl" data-i18n="nav.team">Equipo</a>
       <a href="#faq"      class="nl">FAQ</a>
-      <a href="#contact"  class="nl">Contacto</a>
+      <a href="#contact"  class="nl" data-i18n="nav.contact">Contacto</a>
       <a href="https://wa.me/34686480676" target="_blank" class="btn btn-t" style="padding:10px 22px;font-size:13.5px">
-        Pedir cita <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <span data-i18n="nav.cta">Pedir cita</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
     </div>
     <!-- Acciones móvil: CTA visible + hamburguesa -->
     <div class="nav-mobile-actions">
-      <a href="https://wa.me/34686480676" target="_blank" class="btn btn-t nav-mobile-cta">
+      <a href="https://wa.me/34686480676" target="_blank" class="btn btn-t nav-mobile-cta" data-i18n="nav.cta">
         Pedir cita
       </a>
       <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
@@ -842,12 +861,17 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
 
 <!-- Menú overlay móvil -->
 <div class="nav-mobile-menu" id="nav-mobile-menu" role="dialog" aria-label="Menú de navegación">
-  <a href="#services" class="nav-mobile-link">Servicios</a>
-  <a href="#approach" class="nav-mobile-link">Enfoque</a>
-  <a href="#team"     class="nav-mobile-link">Equipo</a>
+  <a href="#services" class="nav-mobile-link" data-i18n="nav.services">Servicios</a>
+  <a href="#approach" class="nav-mobile-link" data-i18n="nav.approach">Enfoque</a>
+  <a href="#team"     class="nav-mobile-link" data-i18n="nav.team">Equipo</a>
   <a href="#faq"      class="nav-mobile-link">FAQ</a>
-  <a href="#contact"  class="nav-mobile-link">Contacto</a>
-  <a href="https://wa.me/34686480676" target="_blank" class="nav-mobile-link nav-menu-cta">Reservar cita →</a>
+  <a href="#contact"  class="nav-mobile-link" data-i18n="nav.contact">Contacto</a>
+  <a href="https://wa.me/34686480676" target="_blank" class="nav-mobile-link nav-menu-cta" data-i18n="nav.cta.mobile">Reservar cita →</a>
+  <div class="lang-toggle-mobile">
+    <button class="lang-btn lang-btn-lg active" data-lang="es">ES</button>
+    <span class="lang-sep" style="font-size:13px;color:rgba(45,74,62,.2)">|</span>
+    <button class="lang-btn lang-btn-lg" data-lang="en">EN</button>
+  </div>
 </div>
 
 <!-- ═══════════ HERO ═══════════ -->
@@ -856,23 +880,23 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
     <div class="grid2" style="grid-template-columns:5fr 6fr;align-items:center">
       <!-- Left: contenido -->
       <div>
-        <p class="hero-credential">Centro Sanitario Oficial · NICA Nº 43.692</p>
-        <h1 class="hero-h1">
+        <p class="hero-credential" data-i18n="hero.credential">Centro Sanitario Oficial · NICA Nº 43.692</p>
+        <h1 class="hero-h1" data-i18n-html="hero.h1">
           Cuando necesitas<br>
           <em>alguien de verdad</em><br>
           a tu lado.
         </h1>
-        <p class="lead" style="max-width:430px;margin-bottom:40px">
+        <p class="lead" style="max-width:430px;margin-bottom:40px" data-i18n="hero.lead">
           Somos psicólogos especializados en bienestar emocional. Te acompañamos con rigor científico y calidez humana, desde la primera sesión hasta que te sientas tú mismo de nuevo.
         </p>
         <div class="hero-ctas">
-          <a href="https://wa.me/34686480676" target="_blank" class="btn btn-t">Reservar primera consulta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-          <a href="#team" class="btn btn-gd">Conocer el equipo</a>
+          <a href="https://wa.me/34686480676" target="_blank" class="btn btn-t"><span data-i18n="hero.cta1">Reservar primera consulta</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="#team" class="btn btn-gd" data-i18n="hero.cta2">Conocer el equipo</a>
         </div>
         <div class="hero-stats">
-          <div class="hero-stat"><div class="n">+25</div><div class="l">años de experiencia</div></div>
-          <div class="hero-stat"><div class="n">1.200+</div><div class="l">consultas realizadas</div></div>
-          <div class="hero-stat"><div class="n">100%</div><div class="l">profesionales colegiados</div></div>
+          <div class="hero-stat"><div class="n">+25</div><div class="l" data-i18n="hero.stat1">años de experiencia</div></div>
+          <div class="hero-stat"><div class="n">1.200+</div><div class="l" data-i18n="hero.stat2">consultas realizadas</div></div>
+          <div class="hero-stat"><div class="n">100%</div><div class="l" data-i18n="hero.stat3">profesionales colegiados</div></div>
         </div>
       </div>
       <!-- Right: fotografía real -->
@@ -888,10 +912,6 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
       </div>
     </div>
   </div>
-  <div class="hero-scroll">
-    <span>Descubre más</span>
-    <div class="line"></div>
-  </div>
 </section>
 
 <!-- ═══════════ MARQUEE ═══════════ -->
@@ -904,11 +924,11 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
   <div class="wrap">
     <div class="prob-grid">
       <div class="prob-sticky">
-        <p class="sec-label">¿Te identificas?</p>
+        <p class="sec-label" data-i18n="prob.label">¿Te identificas?</p>
         <div class="bar"></div>
-        <h2 class="h2">Muchas personas<br>sienten lo mismo.<br><em>No estás solo.</em></h2>
-        <p class="lead" style="margin:24px 0 36px">Lo que sientes tiene nombre y tiene solución. Llevamos más de veinticinco años ayudando a personas como tú a encontrar su camino hacia el bienestar.</p>
-        <a href="https://wa.me/34686480676" target="_blank" class="btn btn-t">Hablemos de lo que necesitas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <h2 class="h2" data-i18n-html="prob.h2">Muchas personas<br>sienten lo mismo.<br><em>No estás solo.</em></h2>
+        <p class="lead" style="margin:24px 0 36px" data-i18n="prob.lead">Lo que sientes tiene nombre y tiene solución. Llevamos más de veinticinco años ayudando a personas como tú a encontrar su camino hacia el bienestar.</p>
+        <a href="https://wa.me/34686480676" target="_blank" class="btn btn-t"><span data-i18n="prob.cta">Hablemos de lo que necesitas</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
       <div class="prob-cards" id="prob-cards"></div>
     </div>
@@ -919,10 +939,10 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
 <section id="services">
   <div class="wrap">
     <div class="svc-header">
-      <p class="sec-label">Especialidades</p>
+      <p class="sec-label" data-i18n="svc.label">Especialidades</p>
       <div class="bar-c"></div>
-      <h2 class="h2" style="text-align:center">Lo que tratamos en ADA</h2>
-      <p class="lead">Servicios especializados para todas las etapas de la vida y todas las necesidades emocionales.</p>
+      <h2 class="h2" style="text-align:center" data-i18n="svc.h2">Lo que tratamos en ADA</h2>
+      <p class="lead" data-i18n="svc.lead">Servicios especializados para todas las etapas de la vida y todas las necesidades emocionales.</p>
     </div>
     <div class="svc-grid" id="svc-grid"></div>
   </div>
@@ -939,15 +959,15 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
     <div class="grid2">
       <!-- Left -->
       <div>
-        <p class="sec-label-lt">Nuestro enfoque</p>
+        <p class="sec-label-lt" data-i18n="appr.label">Nuestro enfoque</p>
         <div class="bar"></div>
-        <h2 class="h2-lt" style="margin-bottom:24px">Psicología que se<br><em>adapta a ti</em></h2>
-        <p class="lead-lt" style="margin-bottom:40px">No creemos en soluciones genéricas. Nuestra metodología integra los enfoques más eficaces de la psicología actual, adaptados a tus necesidades, historia y objetivos.</p>
+        <h2 class="h2-lt" style="margin-bottom:24px" data-i18n-html="appr.h2">Psicología que se<br><em>adapta a ti</em></h2>
+        <p class="lead-lt" style="margin-bottom:40px" data-i18n="appr.lead">No creemos en soluciones genéricas. Nuestra metodología integra los enfoques más eficaces de la psicología actual, adaptados a tus necesidades, historia y objetivos.</p>
         <blockquote class="cite">
-          <p>"La felicidad es la experiencia espiritual de vivir cada minuto con amor, alegría y gratitud."</p>
-          <cite>— Denis Waitley</cite>
+          <p data-i18n="appr.quote">"La felicidad es la experiencia espiritual de vivir cada minuto con amor, alegría y gratitud."</p>
+          <cite data-i18n="appr.cite">— Denis Waitley</cite>
         </blockquote>
-        <a href="https://wa.me/34686480676" target="_blank" class="btn btn-gl">Hablemos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="https://wa.me/34686480676" target="_blank" class="btn btn-gl"><span data-i18n="appr.cta">Hablemos</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
       <!-- Right: pillars -->
       <div id="pillars" style="display:flex;flex-direction:column;gap:36px"></div>
@@ -959,10 +979,10 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
 <section id="team">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:64px">
-      <p class="sec-label">El equipo</p>
+      <p class="sec-label" data-i18n="team.label">El equipo</p>
       <div class="bar-c"></div>
-      <h2 class="h2">Profesionales que se<br><em>preocupan por ti</em></h2>
-      <p class="lead" style="max-width:470px;margin:16px auto 0">Rigor científico y calidez humana. Psicólogos colegiados con años de experiencia real en acompañamiento terapéutico.</p>
+      <h2 class="h2" data-i18n-html="team.h2">Profesionales que se<br><em>preocupan por ti</em></h2>
+      <p class="lead" style="max-width:470px;margin:16px auto 0" data-i18n="team.lead">Rigor científico y calidez humana. Psicólogos colegiados con años de experiencia real en acompañamiento terapéutico.</p>
     </div>
     <div class="team-grid" id="team-grid"></div>
   </div>
@@ -972,9 +992,9 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
 <section id="testimonials">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:64px">
-      <p class="sec-label">Testimonios</p>
+      <p class="sec-label" data-i18n="test.label">Testimonios</p>
       <div class="bar-c"></div>
-      <h2 class="h2">Lo que dicen quienes<br><em>ya dieron el paso</em></h2>
+      <h2 class="h2" data-i18n-html="test.h2">Lo que dicen quienes<br><em>ya dieron el paso</em></h2>
     </div>
     <!-- Featured -->
     <div class="test-featured">
@@ -1002,9 +1022,9 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
   <div class="cta-deco" style="top:-90px;left:-90px;width:320px;height:320px"></div>
   <div class="cta-deco" style="bottom:-70px;right:-70px;width:260px;height:260px"></div>
   <div class="cta-inner">
-    <p class="cta-label">El primer paso</p>
-    <h2 class="cta-h2">Reserva tu primera<br><em>consulta hoy</em></h2>
-    <p class="cta-lead">Sin listas de espera. Sin burocracia. Solo llámanos o escríbenos y buscamos el horario que mejor se adapte a ti.</p>
+    <p class="cta-label" data-i18n="cta.label">El primer paso</p>
+    <h2 class="cta-h2" data-i18n-html="cta.h2">Reserva tu primera<br><em>consulta hoy</em></h2>
+    <p class="cta-lead" data-i18n="cta.lead">Sin listas de espera. Sin burocracia. Solo llámanos o escríbenos y buscamos el horario que mejor se adapte a ti.</p>
     <div class="cta-btns">
       <a href="https://wa.me/34686480676" target="_blank" class="cta-wa">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--t0)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1012,12 +1032,12 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
       </a>
       <a href="tel:955703738" class="cta-tel">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.18 2 2 0 0 1 3.56 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l1.06-1.02a2 2 0 0 1 2.12-.44 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Llamar · 955 703 738
+        <span data-i18n="cta.call">Llamar · 955 703 738</span>
       </a>
     </div>
     <div class="cta-schedule">
-      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Lun–Vie: 9:00–14:00 y 16:00–22:00</span>
-      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Sáb: 9:00–14:00</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span data-i18n="cta.sched1">Lun–Vie: 9:00–14:00 y 16:00–22:00</span></span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span data-i18n="cta.sched2">Sáb: 9:00–14:00</span></span>
     </div>
   </div>
 </section>
@@ -1026,9 +1046,9 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
 <section id="faq">
   <div class="faq-wrap">
     <div style="text-align:center">
-      <p class="sec-label">Preguntas frecuentes</p>
+      <p class="sec-label" data-i18n="faq.label">Preguntas frecuentes</p>
       <div class="bar-c"></div>
-      <h2 class="h2">Resolvemos tus dudas</h2>
+      <h2 class="h2" data-i18n="faq.h2">Resolvemos tus dudas</h2>
     </div>
     <div class="faq-list" id="faq-list"></div>
   </div>
@@ -1042,56 +1062,56 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
     <div class="contact-grid">
       <!-- Info -->
       <div>
-        <p class="sec-label-lt">Contacto</p>
+        <p class="sec-label-lt" data-i18n="cont.label">Contacto</p>
         <div class="bar"></div>
-        <h2 class="h2-lt" style="margin-bottom:44px">Estamos aquí<br><em>para escucharte</em></h2>
+        <h2 class="h2-lt" style="margin-bottom:44px" data-i18n-html="cont.h2">Estamos aquí<br><em>para escucharte</em></h2>
         <div id="contact-info" style="display:flex;flex-direction:column;gap:26px"></div>
         <div class="nica-box">
-          <div class="nt">REGISTRO OFICIAL</div>
-          <div class="nv">Centro sanitario NICA Nº 43.692</div>
-          <div class="ns">Consejería de Salud de Andalucía</div>
+          <div class="nt" data-i18n="cont.nica.label">REGISTRO OFICIAL</div>
+          <div class="nv" data-i18n="cont.nica.val">Centro sanitario NICA Nº 43.692</div>
+          <div class="ns" data-i18n="cont.nica.sub">Consejería de Salud de Andalucía</div>
         </div>
       </div>
       <!-- Form -->
       <div class="form-box" id="form-box">
-        <h3>Escríbenos</h3>
-        <p class="sub">Te respondemos en menos de 24 h en días laborables.</p>
+        <h3 data-i18n="cont.form.h3">Escríbenos</h3>
+        <p class="sub" data-i18n="cont.form.sub">Te respondemos en menos de 24 h en días laborables.</p>
         <form id="contact-form">
           <div style="display:flex;flex-direction:column;gap:16px">
             <div class="form-row">
               <div class="form-group">
-                <label>Nombre *</label>
-                <input type="text" class="field" placeholder="Tu nombre" required/>
+                <label data-i18n="cont.form.name">Nombre *</label>
+                <input type="text" class="field" placeholder="Tu nombre" data-i18n-placeholder="cont.form.name.ph" required/>
               </div>
               <div class="form-group">
-                <label>Teléfono</label>
-                <input type="tel" class="field" placeholder="Tu teléfono"/>
+                <label data-i18n="cont.form.phone">Teléfono</label>
+                <input type="tel" class="field" placeholder="Tu teléfono" data-i18n-placeholder="cont.form.phone.ph"/>
               </div>
             </div>
             <div class="form-group">
-              <label>Email *</label>
+              <label data-i18n="cont.form.email">Email *</label>
               <input type="email" class="field" placeholder="tu@email.com" required/>
             </div>
             <div class="form-group">
-              <label>Servicio de interés</label>
-              <select class="field" style="cursor:pointer">
-                <option value="">Selecciona un servicio...</option>
-                <option>Psicoterapia para adultos</option>
-                <option>Atención infanto-juvenil</option>
-                <option>Psicooncología</option>
-                <option>Psicología online</option>
-                <option>Evaluación psicológica</option>
-                <option>Terapia familiar</option>
-                <option>Otro</option>
+              <label data-i18n="cont.form.service">Servicio de interés</label>
+              <select class="field" id="form-service-select" style="cursor:pointer">
+                <option value="" data-i18n="cont.form.svc0">Selecciona un servicio...</option>
+                <option data-i18n="cont.form.svc1">Psicoterapia para adultos</option>
+                <option data-i18n="cont.form.svc2">Atención infanto-juvenil</option>
+                <option data-i18n="cont.form.svc3">Psicooncología</option>
+                <option data-i18n="cont.form.svc4">Psicología online</option>
+                <option data-i18n="cont.form.svc5">Evaluación psicológica</option>
+                <option data-i18n="cont.form.svc6">Terapia familiar</option>
+                <option data-i18n="cont.form.svc7">Otro</option>
               </select>
             </div>
             <div class="form-group">
-              <label>Mensaje *</label>
-              <textarea class="field" rows="4" placeholder="Cuéntanos brevemente qué te trae por aquí..." required></textarea>
+              <label data-i18n="cont.form.message">Mensaje *</label>
+              <textarea class="field" rows="4" placeholder="Cuéntanos brevemente qué te trae por aquí..." data-i18n-placeholder="cont.form.msg.ph" required></textarea>
             </div>
-            <p class="form-note">Al enviar este formulario aceptas la política de privacidad. Tus datos serán tratados con total confidencialidad conforme al RGPD.</p>
+            <p class="form-note" data-i18n="cont.form.note">Al enviar este formulario aceptas la política de privacidad. Tus datos serán tratados con total confidencialidad conforme al RGPD.</p>
             <button type="submit" class="btn btn-t" style="width:100%;justify-content:center;padding:16px">
-              Enviar mensaje
+              <span data-i18n="cont.form.submit">Enviar mensaje</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </button>
           </div>
@@ -1109,15 +1129,15 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
       <span class="nica" style="margin-top:8px;display:block">NICA Nº 43.692 · Sanlúcar la Mayor, Sevilla</span>
     </div>
     <div class="footer-links">
-      <a href="#services">Servicios</a>
-      <a href="#approach">Enfoque</a>
-      <a href="#team">Equipo</a>
+      <a href="#services" data-i18n="nav.services">Servicios</a>
+      <a href="#approach" data-i18n="nav.approach">Enfoque</a>
+      <a href="#team" data-i18n="nav.team">Equipo</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact">Contacto</a>
+      <a href="#contact" data-i18n="nav.contact">Contacto</a>
     </div>
     <div class="footer-copy">
       <div>© 2026 ADA Centro Psicológico</div>
-      <div><a href="#">Privacidad</a> · <a href="#">Aviso legal</a> · <a href="#">Cookies</a></div>
+      <div><a href="#" data-i18n="foot.privacy">Privacidad</a> · <a href="#" data-i18n="foot.legal">Aviso legal</a> · <a href="#" data-i18n="foot.cookies">Cookies</a></div>
     </div>
   </div>
 </footer>
@@ -1129,7 +1149,12 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
 
 <script>
 /* ─────────────────────────────────────────────────
-   DATA
+   LANGUAGE
+───────────────────────────────────────────────── */
+let currentLang = localStorage.getItem('ada-lang') || 'es';
+
+/* ─────────────────────────────────────────────────
+   DATA — ESPAÑOL
 ───────────────────────────────────────────────── */
 const MARQUEE_ITEMS = ['Ansiedad','Autoestima','Estrés laboral','Duelo','Fobias','Depresión','Relaciones','Trauma','Crianza','Altas capacidades','Psicooncología','Adicciones','Aprendizaje','Adolescencia'];
 
@@ -1199,6 +1224,198 @@ const CONTACT_INFO = [
 ];
 
 /* ─────────────────────────────────────────────────
+   DATA — ENGLISH
+───────────────────────────────────────────────── */
+const MARQUEE_ITEMS_EN = ['Anxiety','Self-esteem','Work stress','Grief','Phobias','Depression','Relationships','Trauma','Parenting','High abilities','Psycho-oncology','Addictions','Learning','Adolescence'];
+
+const PROBLEMS_EN = [
+  {e:PROBLEMS[0].e,t:'Anxiety',d:'When overwhelm leaves you breathless and your mind won\'t stop racing.'},
+  {e:PROBLEMS[1].e,t:'Depression',d:'When you lose interest in what used to bring you joy and energy.'},
+  {e:PROBLEMS[2].e,t:'Low self-esteem',d:'When the inner voice is too critical and holds you back from moving forward.'},
+  {e:PROBLEMS[3].e,t:'Stress & burnout',d:'When work, family or life in general becomes too much to handle.'},
+  {e:PROBLEMS[4].e,t:'Relationship difficulties',d:'Conflicts in couple, family or social settings you don\'t know how to resolve.'},
+  {e:PROBLEMS[5].e,t:'Grief & loss',d:'When you\'ve lost someone and can\'t find a way to move forward.'},
+];
+
+const SERVICES_EN = [
+  {n:'01',t:'Adult Psychotherapy',d:'A safe, confidential space to work on emotions, thoughts and behaviours. Individual therapy tailored to each person.',tags:['Anxiety','Depression','Trauma','Self-esteem'],c:'#2D4A3E',cl:'rgba(45,74,62,.08)'},
+  {n:'02',t:'Child & Adolescent Care',d:'Specialised support for children and teenagers, working together with families for holistic wellbeing.',tags:['Emotions','Learning','High abilities','Adolescence'],c:'#C97B4A',cl:'rgba(201,123,74,.08)'},
+  {n:'03',t:'Psycho-oncology',d:'Emotional support for people with cancer and their families throughout all stages of the oncological process.',tags:['Diagnosis','Treatment','Survival','Grief'],c:'#5A8A6A',cl:'rgba(90,138,106,.08)'},
+  {n:'04',t:'Online Psychology',d:'Same therapeutic quality from your home. Secure video-call sessions. Also available in English.',tags:['Flexible','Secure','Bilingual','From home'],c:'#7B6A8A',cl:'rgba(123,106,138,.08)'},
+  {n:'05',t:'Psychological Assessment',d:'Professional psychological reports and expert assessments. Comprehensive diagnosis for SEN, high abilities and guidance.',tags:['Diagnosis','Reports','Assessments','SEN'],c:'#8A6A50',cl:'rgba(138,106,80,.08)'},
+  {n:'06',t:'Family Therapy',d:'Guidance and therapy to improve communication, resolve conflicts and strengthen bonds at home.',tags:['Communication','Conflicts','Parenting','Bonds'],c:'#5A7A8A',cl:'rgba(90,122,138,.08)'},
+];
+
+const PILLARS_EN = [
+  {n:'01',t:'Active listening',d:'Every story is unique. We start by understanding yours — without judgement or predetermined frameworks.'},
+  {n:'02',t:'Scientific evidence',d:'We apply validated therapies: CBT, ACT, EMDR and systemic approaches adapted to each case.'},
+  {n:'03',t:'Your personal pace',d:'We move at your pace, without rushing. The therapeutic process is yours and we fully respect that.'},
+  {n:'04',t:'Collaborative work',d:'We are companions in your process, not experts with prescriptions. We work together, always.'},
+];
+
+const TEAM_EN = [
+  {
+    name:'Adalgiza Andrade Agudelo',role:'Clinical Psychologist',
+    photo:'ella.png',
+    creds:['Degree in Psychology · Universidad del Valle, Colombia','Master\'s in Clinical and Health Psychology','Specialist in CBT and third-generation therapies'],
+    specs:['Anxiety and depression','Psycho-oncology','Grief and loss','Stress and burnout'],
+  },
+  {
+    name:'Rooie Shaw',role:'Child & Adolescent Psychologist',
+    photo:'el.png',
+    creds:['Degree in Psychology · The Open University, England','Specialist in Montessori pedagogy','Bilingual care: Spanish–English'],
+    specs:['Child psychology','High abilities','SEN and learning','Family guidance'],
+  },
+];
+
+const REVIEWS_EN = [
+  {t:'I arrived very scared the first time. Adalgiza made me feel comfortable from the very first moment. Eight months later, I recognise myself again.',n:'M. L.',loc:'Sanlúcar la Mayor',tag:'Anxiety'},
+  {t:'My son has high abilities and the school didn\'t know how to help him. Rooie immediately understood what he needed. In just a few months, the change was incredible.',n:'Parent of A. R.',loc:'Seville',tag:'High abilities'},
+  {t:'I was referred by my oncologist during treatment. Thanks to the support from ADA, I was able to face the whole process with much greater strength.',n:'P. G.',loc:'Aljarafe',tag:'Psycho-oncology'},
+  {t:'The online sessions allowed me to continue therapy when I moved. The quality is exactly the same as in person.',n:'C. M.',loc:'Madrid',tag:'Online therapy'},
+];
+
+const FAQS_EN = [
+  {q:'How do I know if I need to see a psychologist?',a:'If something is worrying you, preventing you from living fully, or you simply feel you need a space to talk and be heard — that is already reason enough. You don\'t need to be in crisis to ask for help. Therapy is also for personal growth and prevention.'},
+  {q:'How long does the therapeutic process last?',a:'It depends on each person and the goals of the process. Some changes are felt in just a few sessions; others require deeper work. In the first consultation we assess together what frequency and duration would be most appropriate for you.'},
+  {q:'Are sessions completely confidential?',a:'Yes, absolutely. Professional secrecy is one of the pillars of our practice. Everything discussed in the session remains between the psychologist and the patient, except in situations of serious risk provided for by law.'},
+  {q:'Do you offer online psychology with the same quality?',a:'Yes. We offer video-call sessions with the same quality as in-person appointments. Ideal if you live far away, have reduced mobility or prefer the comfort of your home. The centre is bilingual, so we also see clients in English.'},
+  {q:'Do you see children and adolescents?',a:'Yes, we have a specialised child and adolescent service. We work with young children, teenagers, and also their families. We specialise in high abilities and special educational needs (SEN).'},
+  {q:'How can I book an appointment?',a:'You can contact us by phone (955 703 738), WhatsApp (686 480 676) or email (info@adacentro.com). You can also use the contact form. We reply as soon as possible within opening hours.'},
+  {q:'What sets ADA apart from other centres?',a:'We combine scientific rigour with a deeply human approach. We are a small, specialised team, which allows us to provide truly personalised care. We are also bilingual, cover all ages, and offer both in-person and online appointments.'},
+];
+
+const CONTACT_INFO_EN = [
+  {ico:CONTACT_INFO[0].ico,label:'Address',val:'Av. Hermano Cirilo, 37\n41800 Sanlúcar la Mayor, Seville'},
+  {ico:CONTACT_INFO[1].ico,label:'Phone',val:'955 703 738'},
+  {ico:CONTACT_INFO[2].ico,label:'WhatsApp',val:'686 480 676'},
+  {ico:CONTACT_INFO[3].ico,label:'Email',val:'info@adacentro.com'},
+  {ico:CONTACT_INFO[4].ico,label:'Hours',val:'Mon–Fri: 9:00–14:00 and 16:00–22:00\nSat: 9:00–14:00'},
+];
+
+/* ─────────────────────────────────────────────────
+   I18N STRINGS
+───────────────────────────────────────────────── */
+const I18N = {
+  es: {
+    'lock.title':'Propuesta de <em>Rediseño Web</em> de ADA Psicología',
+    'lock.sub':'Acceso privado y exclusivo para el equipo de la clínica',
+    'lock.placeholder':'Introduce la contraseña...',
+    'lock.btn':'Entrar a la propuesta',
+    'lock.error':'Contraseña incorrecta. Por favor, verifica el código.',
+    'lock.footer':'Entorno Seguro: Este enlace es privado y confidencial.',
+    'nav.services':'Servicios','nav.approach':'Enfoque','nav.team':'Equipo','nav.contact':'Contacto',
+    'nav.cta':'Pedir cita','nav.cta.mobile':'Reservar cita →',
+    'hero.credential':'Centro Sanitario Oficial · NICA Nº 43.692',
+    'hero.h1':'Cuando necesitas<br><em>alguien de verdad</em><br>a tu lado.',
+    'hero.lead':'Somos psicólogos especializados en bienestar emocional. Te acompañamos con rigor científico y calidez humana, desde la primera sesión hasta que te sientas tú mismo de nuevo.',
+    'hero.cta1':'Reservar primera consulta','hero.cta2':'Conocer el equipo',
+    'hero.stat1':'años de experiencia','hero.stat2':'consultas realizadas','hero.stat3':'profesionales colegiados',
+    'prob.label':'¿Te identificas?',
+    'prob.h2':'Muchas personas<br>sienten lo mismo.<br><em>No estás solo.</em>',
+    'prob.lead':'Lo que sientes tiene nombre y tiene solución. Llevamos más de veinticinco años ayudando a personas como tú a encontrar su camino hacia el bienestar.',
+    'prob.cta':'Hablemos de lo que necesitas',
+    'svc.label':'Especialidades','svc.h2':'Lo que tratamos en ADA',
+    'svc.lead':'Servicios especializados para todas las etapas de la vida y todas las necesidades emocionales.',
+    'appr.label':'Nuestro enfoque',
+    'appr.h2':'Psicología que se<br><em>adapta a ti</em>',
+    'appr.lead':'No creemos en soluciones genéricas. Nuestra metodología integra los enfoques más eficaces de la psicología actual, adaptados a tus necesidades, historia y objetivos.',
+    'appr.quote':'"La felicidad es la experiencia espiritual de vivir cada minuto con amor, alegría y gratitud."',
+    'appr.cite':'— Denis Waitley','appr.cta':'Hablemos',
+    'team.label':'El equipo',
+    'team.h2':'Profesionales que se<br><em>preocupan por ti</em>',
+    'team.lead':'Rigor científico y calidez humana. Psicólogos colegiados con años de experiencia real en acompañamiento terapéutico.',
+    'team.specs':'Especialidades',
+    'test.label':'Testimonios',
+    'test.h2':'Lo que dicen quienes<br><em>ya dieron el paso</em>',
+    'cta.label':'El primer paso',
+    'cta.h2':'Reserva tu primera<br><em>consulta hoy</em>',
+    'cta.lead':'Sin listas de espera. Sin burocracia. Solo llámanos o escríbenos y buscamos el horario que mejor se adapte a ti.',
+    'cta.call':'Llamar · 955 703 738',
+    'cta.sched1':'Lun–Vie: 9:00–14:00 y 16:00–22:00','cta.sched2':'Sáb: 9:00–14:00',
+    'faq.label':'Preguntas frecuentes','faq.h2':'Resolvemos tus dudas',
+    'cont.label':'Contacto',
+    'cont.h2':'Estamos aquí<br><em>para escucharte</em>',
+    'cont.nica.label':'REGISTRO OFICIAL',
+    'cont.nica.val':'Centro sanitario NICA Nº 43.692',
+    'cont.nica.sub':'Consejería de Salud de Andalucía',
+    'cont.form.h3':'Escríbenos',
+    'cont.form.sub':'Te respondemos en menos de 24 h en días laborables.',
+    'cont.form.name':'Nombre *','cont.form.phone':'Teléfono','cont.form.email':'Email *',
+    'cont.form.service':'Servicio de interés','cont.form.message':'Mensaje *',
+    'cont.form.name.ph':'Tu nombre','cont.form.phone.ph':'Tu teléfono',
+    'cont.form.svc0':'Selecciona un servicio...','cont.form.svc1':'Psicoterapia para adultos',
+    'cont.form.svc2':'Atención infanto-juvenil','cont.form.svc3':'Psicooncología',
+    'cont.form.svc4':'Psicología online','cont.form.svc5':'Evaluación psicológica',
+    'cont.form.svc6':'Terapia familiar','cont.form.svc7':'Otro',
+    'cont.form.msg.ph':'Cuéntanos brevemente qué te trae por aquí...',
+    'cont.form.note':'Al enviar este formulario aceptas la política de privacidad. Tus datos serán tratados con total confidencialidad conforme al RGPD.',
+    'cont.form.submit':'Enviar mensaje',
+    'cont.form.ok.h3':'¡Mensaje recibido!',
+    'cont.form.ok.p':'Te contactaremos lo antes posible en horario de atención.<br>Gracias por confiar en ADA Centro.',
+    'foot.privacy':'Privacidad','foot.legal':'Aviso legal','foot.cookies':'Cookies',
+  },
+  en: {
+    'lock.title':'Web <em>Redesign Proposal</em> for ADA Psychology',
+    'lock.sub':'Private and exclusive access for the clinic team',
+    'lock.placeholder':'Enter password...',
+    'lock.btn':'Enter the proposal',
+    'lock.error':'Incorrect password. Please check the code.',
+    'lock.footer':'Secure Environment: This link is private and confidential.',
+    'nav.services':'Services','nav.approach':'Approach','nav.team':'Team','nav.contact':'Contact',
+    'nav.cta':'Book appointment','nav.cta.mobile':'Book appointment →',
+    'hero.credential':'Official Health Centre · NICA No. 43,692',
+    'hero.h1':'When you need<br><em>someone truly</em><br>by your side.',
+    'hero.lead':'We are psychologists specialised in emotional wellbeing. We accompany you with scientific rigour and human warmth, from the very first session until you feel yourself again.',
+    'hero.cta1':'Book first consultation','hero.cta2':'Meet the team',
+    'hero.stat1':'years of experience','hero.stat2':'consultations completed','hero.stat3':'registered professionals',
+    'prob.label':'Do you relate?',
+    'prob.h2':'Many people<br>feel the same.<br><em>You are not alone.</em>',
+    'prob.lead':'What you feel has a name and a solution. For over twenty-five years we have been helping people like you find their path to wellbeing.',
+    'prob.cta':'Let\'s talk about what you need',
+    'svc.label':'Specialties','svc.h2':'What we treat at ADA',
+    'svc.lead':'Specialised services for every stage of life and every emotional need.',
+    'appr.label':'Our approach',
+    'appr.h2':'Psychology that<br><em>adapts to you</em>',
+    'appr.lead':'We don\'t believe in generic solutions. Our methodology integrates the most effective approaches in modern psychology, tailored to your needs, history and goals.',
+    'appr.quote':'"Happiness is the spiritual experience of living every minute with love, joy and gratitude."',
+    'appr.cite':'— Denis Waitley','appr.cta':'Let\'s talk',
+    'team.label':'Our team',
+    'team.h2':'Professionals who<br><em>care about you</em>',
+    'team.lead':'Scientific rigour and human warmth. Registered psychologists with years of real experience in therapeutic support.',
+    'team.specs':'Specialties',
+    'test.label':'Testimonials',
+    'test.h2':'What those who<br><em>took the step say</em>',
+    'cta.label':'The first step',
+    'cta.h2':'Book your first<br><em>consultation today</em>',
+    'cta.lead':'No waiting lists. No bureaucracy. Just call or message us and we\'ll find the time that works best for you.',
+    'cta.call':'Call · 955 703 738',
+    'cta.sched1':'Mon–Fri: 9:00–14:00 and 16:00–22:00','cta.sched2':'Sat: 9:00–14:00',
+    'faq.label':'Frequently asked questions','faq.h2':'We answer your questions',
+    'cont.label':'Contact',
+    'cont.h2':'We are here<br><em>to listen to you</em>',
+    'cont.nica.label':'OFFICIAL REGISTRY',
+    'cont.nica.val':'Health Centre NICA No. 43,692',
+    'cont.nica.sub':'Andalusian Health Council',
+    'cont.form.h3':'Write to us',
+    'cont.form.sub':'We reply within 24 hours on working days.',
+    'cont.form.name':'Name *','cont.form.phone':'Phone','cont.form.email':'Email *',
+    'cont.form.service':'Service of interest','cont.form.message':'Message *',
+    'cont.form.name.ph':'Your name','cont.form.phone.ph':'Your phone',
+    'cont.form.svc0':'Select a service...','cont.form.svc1':'Adult psychotherapy',
+    'cont.form.svc2':'Child & adolescent care','cont.form.svc3':'Psycho-oncology',
+    'cont.form.svc4':'Online psychology','cont.form.svc5':'Psychological assessment',
+    'cont.form.svc6':'Family therapy','cont.form.svc7':'Other',
+    'cont.form.msg.ph':'Tell us briefly what brings you here...',
+    'cont.form.note':'By submitting this form you accept the privacy policy. Your data will be treated with complete confidentiality in accordance with GDPR.',
+    'cont.form.submit':'Send message',
+    'cont.form.ok.h3':'Message received!',
+    'cont.form.ok.p':'We will contact you as soon as possible during office hours.<br>Thank you for trusting ADA Centro.',
+    'foot.privacy':'Privacy','foot.legal':'Legal notice','foot.cookies':'Cookies',
+  }
+};
+
+/* ─────────────────────────────────────────────────
    HELPERS
 ───────────────────────────────────────────────── */
 function stars(n=5, color='var(--t0)') {
@@ -1209,101 +1426,119 @@ function check() {
 }
 
 /* ─────────────────────────────────────────────────
-   RENDER MARQUEE
+   RENDER HELPERS (lang-aware)
 ───────────────────────────────────────────────── */
-(function renderMarquee() {
-  const items = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
-  document.getElementById('mtrack').innerHTML = items.map(t =>
+function renderMarquee(items) {
+  const doubled = [...items, ...items];
+  document.getElementById('mtrack').innerHTML = doubled.map(t =>
     `<span class="mitem"><span>${t}</span><em>·</em></span>`
   ).join('');
-})();
+}
 
-/* ─────────────────────────────────────────────────
-   RENDER PROBLEMS
-───────────────────────────────────────────────── */
-document.getElementById('prob-cards').innerHTML = PROBLEMS.map(c =>
-  `<div class="prob-card">
-    <span class="em">${c.e}</span>
-    <div>
-      <div class="title">${c.t}</div>
-      <div class="desc">${c.d}</div>
-    </div>
-  </div>`
-).join('');
+function renderProblems(problems) {
+  document.getElementById('prob-cards').innerHTML = problems.map(c =>
+    `<div class="prob-card">
+      <span class="em">${c.e}</span>
+      <div><div class="title">${c.t}</div><div class="desc">${c.d}</div></div>
+    </div>`
+  ).join('');
+}
 
-/* ─────────────────────────────────────────────────
-   RENDER SERVICES
-───────────────────────────────────────────────── */
-document.getElementById('svc-grid').innerHTML = SERVICES.map(s =>
-  `<div class="svc-card">
-    <div class="svc-num" style="color:${s.cl.replace('.08','.18')}">${s.n}</div>
-    <div class="svc-dot" style="background:${s.c}"></div>
-    <h3>${s.t}</h3>
-    <p>${s.d}</p>
-    <div class="svc-tags">
-      ${s.tags.map(tag => `<span class="tag" style="background:${s.cl};color:${s.c}">${tag}</span>`).join('')}
-    </div>
-  </div>`
-).join('');
+function renderServices(services) {
+  document.getElementById('svc-grid').innerHTML = services.map(s =>
+    `<div class="svc-card">
+      <div class="svc-num" style="color:${s.cl.replace('.08','.18')}">${s.n}</div>
+      <div class="svc-dot" style="background:${s.c}"></div>
+      <h3>${s.t}</h3><p>${s.d}</p>
+      <div class="svc-tags">
+        ${s.tags.map(tag => `<span class="tag" style="background:${s.cl};color:${s.c}">${tag}</span>`).join('')}
+      </div>
+    </div>`
+  ).join('');
+}
 
-/* ─────────────────────────────────────────────────
-   RENDER PILLARS
-───────────────────────────────────────────────── */
-document.getElementById('pillars').innerHTML = PILLARS.map(p =>
-  `<div class="pillar">
-    <div class="pillar-num">${p.n}</div>
-    <div>
-      <h3>${p.t}</h3>
-      <p>${p.d}</p>
-    </div>
-  </div>`
-).join('');
+function renderPillars(pillars) {
+  document.getElementById('pillars').innerHTML = pillars.map(p =>
+    `<div class="pillar">
+      <div class="pillar-num">${p.n}</div>
+      <div><h3>${p.t}</h3><p>${p.d}</p></div>
+    </div>`
+  ).join('');
+}
 
-/* ─────────────────────────────────────────────────
-   RENDER TEAM
-───────────────────────────────────────────────── */
-document.getElementById('team-grid').innerHTML = TEAM.map(m =>
-  `<div class="team-card">
-    <div class="team-photo">
-      <img src="${m.photo}" alt="${m.name}" loading="lazy">
-      <div class="team-role-badge"><span>${m.role}</span></div>
-    </div>
-    <div class="team-body">
-      <h3>${m.name}</h3>
-      ${m.creds.map(c => `<div class="cred-item">${check()}<span>${c}</span></div>`).join('')}
-      <div class="spec-section" style="margin-top:20px">
-        <div class="spec-label">Especialidades</div>
-        <div class="spec-tags">
-          ${m.specs.map(s => `<span class="spec-tag">${s}</span>`).join('')}
+function renderTeam(teamData, specsLabel) {
+  document.getElementById('team-grid').innerHTML = teamData.map(m =>
+    `<div class="team-card">
+      <div class="team-photo">
+        <img src="${m.photo}" alt="${m.name}" loading="lazy">
+        <div class="team-role-badge"><span>${m.role}</span></div>
+      </div>
+      <div class="team-body">
+        <h3>${m.name}</h3>
+        ${m.creds.map(c => `<div class="cred-item">${check()}<span>${c}</span></div>`).join('')}
+        <div class="spec-section" style="margin-top:20px">
+          <div class="spec-label">${specsLabel}</div>
+          <div class="spec-tags">${m.specs.map(s => `<span class="spec-tag">${s}</span>`).join('')}</div>
         </div>
       </div>
-    </div>
-  </div>`
-).join('');
+    </div>`
+  ).join('');
+}
+
+function renderContactInfo(info) {
+  document.getElementById('contact-info').innerHTML = info.map(it =>
+    `<div class="ci-item">
+      <div class="ci-ico">${it.ico}</div>
+      <div><div class="ci-label">${it.label}</div><div class="ci-val">${it.val}</div></div>
+    </div>`
+  ).join('');
+}
+
+function renderFaq(faqs) {
+  document.getElementById('faq-list').innerHTML = faqs.map((f,i) =>
+    `<div class="faq-item">
+      <button class="faq-btn" data-i="${i}">
+        <span>${f.q}</span>
+        <div class="faq-icon" data-icon="${i}">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </button>
+      <div class="faq-body" data-body="${i}"><p>${f.a}</p></div>
+    </div>`
+  ).join('');
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const i = btn.dataset.i;
+      const body = document.querySelector(`[data-body="${i}"]`);
+      const icon = document.querySelector(`[data-icon="${i}"]`);
+      const isOpen = body.classList.contains('open');
+      document.querySelectorAll('.faq-body').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.faq-icon').forEach(ic => ic.classList.remove('open'));
+      if (!isOpen) { body.classList.add('open'); icon.classList.add('open'); }
+    });
+  });
+}
 
 /* ─────────────────────────────────────────────────
-   RENDER TESTIMONIALS
+   TESTIMONIALS
 ───────────────────────────────────────────────── */
 let activeTest = 0;
 
 function renderTestimonials(idx) {
-  const r = REVIEWS[idx];
+  const reviews = currentLang === 'en' ? REVIEWS_EN : REVIEWS;
+  const r = reviews[idx];
   document.getElementById('feat-stars').innerHTML = stars(5);
   document.getElementById('feat-tag').textContent = r.tag;
   document.getElementById('feat-text').textContent = `"${r.t}"`;
   document.getElementById('feat-name').textContent = r.n;
   document.getElementById('feat-loc').textContent = r.loc;
-
-  // Dots
-  document.getElementById('test-dots').innerHTML = REVIEWS.map((_,i) =>
+  document.getElementById('test-dots').innerHTML = reviews.map((_,i) =>
     `<button class="tdot${i===idx?' active':''}" data-i="${i}"></button>`
   ).join('');
   document.querySelectorAll('.tdot').forEach(d =>
     d.addEventListener('click', () => { activeTest = +d.dataset.i; renderTestimonials(activeTest); })
   );
-
-  // Minis
-  document.getElementById('test-minis').innerHTML = REVIEWS.map((rv,i) =>
+  document.getElementById('test-minis').innerHTML = reviews.map((rv,i) =>
     `<div class="test-mini${i===idx?' active':''}" data-i="${i}">
       <div class="stars2">${stars(5, i===idx ? 'var(--t2)' : 'var(--t0)')}</div>
       <p class="body">${rv.t}</p>
@@ -1314,64 +1549,60 @@ function renderTestimonials(idx) {
     m.addEventListener('click', () => { activeTest = +m.dataset.i; renderTestimonials(activeTest); })
   );
 }
-renderTestimonials(0);
 
-// Auto-advance
 setInterval(() => { activeTest = (activeTest + 1) % REVIEWS.length; renderTestimonials(activeTest); }, 5000);
 
 /* ─────────────────────────────────────────────────
-   RENDER CONTACT INFO
+   SET LANGUAGE
 ───────────────────────────────────────────────── */
-document.getElementById('contact-info').innerHTML = CONTACT_INFO.map(it =>
-  `<div class="ci-item">
-    <div class="ci-ico">${it.ico}</div>
-    <div>
-      <div class="ci-label">${it.label}</div>
-      <div class="ci-val">${it.val}</div>
-    </div>
-  </div>`
-).join('');
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('ada-lang', lang);
+  document.documentElement.lang = lang;
+  const t = I18N[lang];
+  const isEN = lang === 'en';
 
-/* ─────────────────────────────────────────────────
-   RENDER FAQ
-───────────────────────────────────────────────── */
-document.getElementById('faq-list').innerHTML = FAQS.map((f,i) =>
-  `<div class="faq-item">
-    <button class="faq-btn" data-i="${i}">
-      <span>${f.q}</span>
-      <div class="faq-icon" data-icon="${i}">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-    </button>
-    <div class="faq-body" data-body="${i}">
-      <p>${f.a}</p>
-    </div>
-  </div>`
-).join('');
-
-document.querySelectorAll('.faq-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const i = btn.dataset.i;
-    const body = document.querySelector(`[data-body="${i}"]`);
-    const icon = document.querySelector(`[data-icon="${i}"]`);
-    const isOpen = body.classList.contains('open');
-    // Close all
-    document.querySelectorAll('.faq-body').forEach(b => b.classList.remove('open'));
-    document.querySelectorAll('.faq-icon').forEach(ic => ic.classList.remove('open'));
-    if (!isOpen) { body.classList.add('open'); icon.classList.add('open'); }
+  // Static i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = t[el.dataset.i18n];
+    if (v !== undefined) el.textContent = v;
   });
-});
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const v = t[el.dataset.i18nHtml];
+    if (v !== undefined) el.innerHTML = v;
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const v = t[el.dataset.i18nPlaceholder];
+    if (v !== undefined) el.placeholder = v;
+  });
+
+  // Dynamic sections
+  renderMarquee(isEN ? MARQUEE_ITEMS_EN : MARQUEE_ITEMS);
+  renderProblems(isEN ? PROBLEMS_EN : PROBLEMS);
+  renderServices(isEN ? SERVICES_EN : SERVICES);
+  renderPillars(isEN ? PILLARS_EN : PILLARS);
+  renderTeam(isEN ? TEAM_EN : TEAM, t['team.specs']);
+  renderTestimonials(activeTest);
+  renderContactInfo(isEN ? CONTACT_INFO_EN : CONTACT_INFO);
+  renderFaq(isEN ? FAQS_EN : FAQS);
+
+  // Toggle button state
+  document.querySelectorAll('[data-lang]').forEach(btn =>
+    btn.classList.toggle('active', btn.dataset.lang === lang)
+  );
+}
 
 /* ─────────────────────────────────────────────────
    CONTACT FORM
 ───────────────────────────────────────────────── */
 document.getElementById('contact-form').addEventListener('submit', e => {
   e.preventDefault();
+  const t = I18N[currentLang];
   document.getElementById('form-box').innerHTML = `
     <div class="form-success">
       <div class="ico2"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--g3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
-      <h3>¡Mensaje recibido!</h3>
-      <p>Te contactaremos lo antes posible en horario de atención.<br>Gracias por confiar en ADA Centro.</p>
+      <h3>${t['cont.form.ok.h3']}</h3>
+      <p>${t['cont.form.ok.p']}</p>
     </div>`;
 });
 
@@ -1420,6 +1651,25 @@ window.addEventListener('scroll', () => {
 })();
 
 /* ─────────────────────────────────────────────────
+   LANG TOGGLE EVENTS + INIT
+───────────────────────────────────────────────── */
+document.querySelectorAll('[data-lang]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    setLang(btn.dataset.lang);
+    const menu = document.getElementById('nav-mobile-menu');
+    const tog = document.getElementById('nav-toggle');
+    if (menu && menu.classList.contains('open')) {
+      menu.classList.remove('open');
+      tog && tog.classList.remove('open');
+      tog && tog.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    }
+  });
+});
+
+setLang(currentLang);
+
+/* ─────────────────────────────────────────────────
    FONTS FALLBACK (if offline, still looks decent)
 ───────────────────────────────────────────────── */
 document.fonts && document.fonts.ready.then(() => {
@@ -1460,6 +1710,9 @@ document.body.style.opacity = '1';
 
   btn.addEventListener('click', tryUnlock);
   input.addEventListener('keydown', e => { if(e.key === 'Enter') tryUnlock(); });
+
+  // TEMPORAL: acceso libre (descomenta y borra esta línea para reactivar contraseña)
+  unlock();
 })();
 </script>
 </body>
