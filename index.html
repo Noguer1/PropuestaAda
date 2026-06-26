@@ -5,7 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ADA Centro Psicológico · Sanlúcar la Mayor, Sevilla</title>
 <meta name="description" content="Centro psicológico especializado en bienestar emocional. Psicoterapia para adultos, atención infanto-juvenil, psicooncología y más. Sanlúcar la Mayor, Sevilla."/>
-<meta name="robots" content="noindex, nofollow"/>
+<meta name="robots" content="index, follow"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="ADA Centro Psicológico · Sanlúcar la Mayor, Sevilla"/>
+<meta property="og:description" content="Centro psicológico especializado en bienestar emocional. Psicoterapia para adultos, atención infanto-juvenil, psicooncología y más. Sanlúcar la Mayor, Sevilla."/>
+<meta property="og:image" content="https://adacentro.com/juntos.webp"/>
+<meta property="og:url" content="https://adacentro.com"/>
+<meta property="og:locale" content="es_ES"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="ADA Centro Psicológico · Sanlúcar la Mayor, Sevilla"/>
+<meta name="twitter:description" content="Centro psicológico especializado en bienestar emocional. Psicoterapia para adultos, atención infanto-juvenil, psicooncología y más."/>
+<meta name="twitter:image" content="https://adacentro.com/juntos.webp"/>
+<link rel="icon" type="image/webp" href="logoada.webp"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -203,6 +214,21 @@ button{font-family:inherit;cursor:pointer}
 /* ═══════════════════════════════════════════
    SERVICES
 ═══════════════════════════════════════════ */
+/* ═══════════════════════════════════════════
+   HOW IT WORKS
+═══════════════════════════════════════════ */
+#howto{background:var(--c0);padding:clamp(60px,9vw,110px) 0}
+.howto-header{text-align:center;margin-bottom:56px}
+.howto-steps{display:grid;grid-template-columns:repeat(3,1fr);position:relative}
+.howto-steps::before{content:'';position:absolute;top:36px;left:calc(16.66% + 22px);right:calc(16.66% + 22px);height:1px;background:linear-gradient(90deg,transparent,var(--t0) 30%,var(--g3) 70%,transparent);pointer-events:none}
+.howto-step{text-align:center;padding:0 clamp(16px,3vw,44px)}
+.howto-num-wrap{position:relative;display:inline-flex;align-items:center;justify-content:center;margin-bottom:22px}
+.howto-circle{width:72px;height:72px;border-radius:50%;background:var(--g0);display:flex;align-items:center;justify-content:center;position:relative;z-index:1;color:var(--g4);transition:transform .35s ease,box-shadow .35s ease}
+.howto-step:hover .howto-circle{transform:translateY(-4px);box-shadow:0 16px 40px rgba(28,48,40,.2)}
+.howto-badge{position:absolute;top:-4px;right:-4px;width:22px;height:22px;border-radius:50%;background:var(--t0);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;line-height:1}
+.howto-step h3{font-size:18px;font-weight:500;color:var(--tx);margin-bottom:10px}
+.howto-step p{font-size:14px;line-height:1.72;color:var(--tm);font-weight:300;max-width:240px;margin:0 auto}
+
 #services{background:var(--c1);padding:clamp(60px,9vw,110px) 0}
 .svc-header{text-align:center;margin-bottom:64px}
 .svc-header p.lead{max-width:460px;margin:16px auto 0}
@@ -412,6 +438,165 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
 .footer-copy a:hover{color:rgba(200,219,201,.7)}
 
 /* ═══════════════════════════════════════════
+   GOOGLE MAPS
+═══════════════════════════════════════════ */
+.map-wrap{margin-top:52px;border-radius:20px;overflow:hidden;height:320px;border:1px solid rgba(200,219,201,.12)}
+.map-wrap iframe{width:100%;height:100%;border:0;display:block}
+
+/* ═══════════════════════════════════════════
+   GOOGLE REVIEWS BADGE
+═══════════════════════════════════════════ */
+.google-badge{display:inline-flex;align-items:center;gap:12px;background:#fff;border:1px solid rgba(45,74,62,.1);border-radius:100px;padding:10px 22px 10px 14px;margin-top:22px;transition:box-shadow .3s,transform .3s;text-decoration:none;color:inherit}
+.google-badge:hover{box-shadow:0 8px 24px rgba(28,48,40,.1);transform:translateY(-2px)}
+.gb-g{width:30px;height:30px;flex-shrink:0}
+.gb-stars{font-size:13px;color:#FBBC04;letter-spacing:2px;line-height:1}
+.gb-label{font-size:11.5px;color:var(--tl);margin-top:2px}
+
+/* ═══════════════════════════════════════════
+   ACCESSIBILITY
+═══════════════════════════════════════════ */
+.a11y-btn{position:fixed;bottom:28px;left:28px;width:42px;height:42px;border-radius:50%;background:var(--g0);border:1.5px solid rgba(200,219,201,.18);display:flex;align-items:center;justify-content:center;z-index:200;cursor:pointer;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:rgba(200,219,201,.75);transition:all .3s;box-shadow:0 4px 16px rgba(0,0,0,.2)}
+.a11y-btn:hover{background:var(--g1);color:var(--g4)}
+.a11y-btn.active{background:var(--t0);color:#fff;border-color:transparent}
+body.a11y-large .lead,body.a11y-large .lead-lt{font-size:18px}
+body.a11y-large .prob-card .desc,body.a11y-large .svc-card p,body.a11y-large .pillar p{font-size:15.5px}
+body.a11y-large .faq-btn span{font-size:18px}
+body.a11y-large .faq-body p{font-size:16px}
+body.a11y-large .cred-item span,body.a11y-large .ci-val{font-size:15.5px}
+body.a11y-large .howto-step p,body.a11y-large .test-text{font-size:15.5px}
+@media(max-width:767px){
+  .map-wrap{height:220px;margin-top:32px;border-radius:14px}
+  .a11y-btn{bottom:16px;left:16px;width:38px;height:38px;font-size:12px}
+}
+
+/* ═══════════════════════════════════════════
+   CALENDLY
+═══════════════════════════════════════════ */
+#calendly{background:var(--c1);padding:clamp(60px,9vw,110px) 0}
+.cal-header{text-align:center;margin-bottom:40px}
+.cal-note{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:14px;flex-wrap:wrap}
+.cal-note span{font-size:13px;color:var(--tl);display:flex;align-items:center;gap:6px}
+.cal-placeholder{border-radius:24px;border:2px dashed rgba(45,74,62,.15);background:rgba(45,74,62,.03);padding:clamp(48px,7vw,80px) 24px;text-align:center}
+.cal-ph-inner{max-width:500px;margin:0 auto}
+.cal-ph-icon{width:72px;height:72px;border-radius:50%;background:var(--g0);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;color:var(--g4)}
+.cal-ph-inner h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--tx);margin-bottom:10px}
+.cal-ph-inner .sub{font-size:14px;color:var(--tl);margin-bottom:28px}
+.cal-steps{display:flex;flex-direction:column;gap:12px;text-align:left;margin-bottom:32px}
+.cal-step{display:flex;gap:14px;align-items:flex-start;background:#fff;border-radius:14px;padding:14px 18px;border:1px solid rgba(45,74,62,.07)}
+.cal-step-n{width:26px;height:26px;border-radius:50%;background:var(--t0);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.cal-step-text strong{font-size:14px;color:var(--tx);display:block;margin-bottom:2px}
+.cal-step-text span{font-size:12.5px;color:var(--tl)}
+@media(max-width:767px){
+  #calendly{padding:48px 0}
+  .cal-note{gap:12px}
+  .cal-note span{font-size:12px}
+}
+
+/* ═══════════════════════════════════════════
+   BLOG / RECURSOS
+═══════════════════════════════════════════ */
+#blog{background:var(--c0);padding:clamp(48px,7vw,80px) 0}
+.blog-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.blog-card{background:#fff;border-radius:20px;overflow:hidden;border:1px solid rgba(45,74,62,.06);transition:transform .35s ease,box-shadow .35s ease;display:flex;flex-direction:column}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(28,48,40,.1)}
+.blog-img{height:130px;display:flex;align-items:center;justify-content:center}
+.blog-body{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column}
+.blog-pill{display:inline-block;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:10px;padding:3px 12px;border-radius:100px}
+.blog-card h3{font-size:16px;font-weight:500;color:var(--tx);line-height:1.4;margin-bottom:8px}
+.blog-card p{font-size:13px;line-height:1.7;color:var(--tm);font-weight:300;flex:1;margin-bottom:16px}
+.blog-foot{display:flex;align-items:center;justify-content:space-between}
+.blog-time{font-size:11.5px;color:var(--tl);display:flex;align-items:center;gap:5px}
+.blog-link{font-size:12.5px;font-weight:500;color:var(--g1);display:flex;align-items:center;gap:5px;transition:gap .2s}
+.blog-card:hover .blog-link{gap:9px}
+@media(max-width:767px){
+  #blog{padding:40px 0}
+  .blog-header{flex-direction:column;align-items:flex-start;margin-bottom:24px}
+  .blog-grid{grid-template-columns:1fr;gap:12px}
+  .blog-img{height:100px}
+}
+@media(min-width:768px) and (max-width:1023px){
+  .blog-grid{grid-template-columns:1fr 1fr}
+}
+
+/* ═══════════════════════════════════════════
+   PRELOADER
+═══════════════════════════════════════════ */
+#preloader{position:fixed;inset:0;z-index:99999;background:var(--g0);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s ease,visibility .6s ease}
+#preloader.done{opacity:0;visibility:hidden;pointer-events:none}
+.pl-logo img{height:56px;width:auto;filter:brightness(0) invert(1);animation:fadein .5s ease both}
+.pl-bar{width:100px;height:2px;background:rgba(200,219,201,.15);border-radius:2px;margin:22px auto 0;overflow:hidden}
+.pl-bar-inner{height:100%;width:0;background:linear-gradient(90deg,var(--t0),var(--g3));border-radius:2px;animation:pl-fill .85s .1s ease forwards}
+@keyframes pl-fill{to{width:100%}}
+
+/* ═══════════════════════════════════════════
+   CURSOR
+═══════════════════════════════════════════ */
+@media(pointer:fine){
+  *{cursor:none !important}
+  .cursor{position:fixed;pointer-events:none;z-index:99998;width:8px;height:8px;border-radius:50%;background:var(--g2);transform:translate(-50%,-50%);transition:width .18s ease,height .18s ease,background .18s ease,border .18s ease;will-change:left,top}
+  .cursor.grow{width:28px;height:28px;background:rgba(45,74,62,.08);border:1.5px solid var(--g2)}
+}
+
+/* ═══════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════ */
+.sr{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.sr.visible{opacity:1;transform:none}
+.sr-l{opacity:0;transform:translateX(-28px);transition:opacity .65s ease,transform .65s ease}
+.sr-l.visible{opacity:1;transform:none}
+
+/* ═══════════════════════════════════════════
+   DARK MODE
+═══════════════════════════════════════════ */
+.dark-toggle{background:none;border:none;cursor:pointer;padding:6px;color:var(--tl);transition:color .2s;display:flex;align-items:center;line-height:0;margin-left:4px}
+.dark-toggle:hover{color:var(--tx)}
+.dark-toggle .icon-sun{display:none}
+body.dark .dark-toggle .icon-moon{display:none}
+body.dark .dark-toggle .icon-sun{display:block}
+body.dark .dark-toggle{color:var(--g4)}
+body.dark{
+  --c0:#1b2920;--c1:#1f3028;--c2:#2c4038;
+  --tx:#ddeadf;--tm:#8faa98;--tl:#5a7870;
+}
+body.dark #nav.scrolled{background:rgba(27,41,32,.96)}
+body.dark .svc-card,body.dark .prob-card,body.dark .faq-item,body.dark .blog-card,body.dark .why-card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.06)}
+body.dark .team-card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.06)}
+body.dark .test-featured{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.06)}
+body.dark .test-mini{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.05)}
+body.dark .test-mini.active{background:var(--g0);border-color:transparent}
+body.dark .cal-placeholder{border-color:rgba(200,219,201,.12);background:rgba(200,219,201,.02)}
+body.dark .cal-step{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.06)}
+body.dark .google-badge{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.08)}
+body.dark .field{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);color:var(--tx)}
+body.dark .field::placeholder{color:var(--tl)}
+body.dark .howto-circle{background:rgba(45,74,62,.7)}
+body.dark .hero-photo-wrap{box-shadow:0 40px 100px rgba(0,0,0,.5)}
+body.dark .nav-mobile-menu{background:var(--c0)}
+
+/* ═══════════════════════════════════════════
+   POR QUÉ ADA
+═══════════════════════════════════════════ */
+#why{background:var(--c0);padding:clamp(60px,9vw,110px) 0}
+.why-header{text-align:center;margin-bottom:52px}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.why-card{background:#fff;border-radius:24px;padding:32px;border:1px solid rgba(45,74,62,.06);display:flex;gap:22px;align-items:flex-start;transition:transform .35s ease,box-shadow .35s ease;position:relative;overflow:hidden}
+.why-card:hover{transform:translateY(-4px);box-shadow:0 24px 64px rgba(28,48,40,.1)}
+.why-ico{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-card h3{font-size:18px;font-weight:500;color:var(--tx);margin-bottom:8px;line-height:1.3}
+.why-card p{font-size:13.5px;line-height:1.72;color:var(--tm);font-weight:300}
+.why-deco{position:absolute;bottom:-12px;right:14px;font-family:'Cormorant Garamond',serif;font-size:90px;font-weight:300;line-height:1;color:rgba(45,74,62,.06);user-select:none;pointer-events:none;font-style:italic}
+@media(max-width:767px){
+  #why{padding:48px 0}
+  .why-grid{grid-template-columns:1fr;gap:10px}
+  .why-card{padding:18px;gap:14px;border-radius:18px}
+  .why-ico{width:44px;height:44px;border-radius:11px}
+  .why-card h3{font-size:16px;margin-bottom:5px}
+  .why-card p{font-size:13px}
+  .why-deco{font-size:60px}
+}
+
+/* ═══════════════════════════════════════════
    WA FLOAT
 ═══════════════════════════════════════════ */
 .wa-float{
@@ -566,6 +751,12 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
   .prob-card .em{font-size:22px}
   .prob-card .title{font-size:15px;margin-bottom:4px}
   .prob-card .desc{font-size:13px;line-height:1.55}
+
+  /* ── HOW IT WORKS ── */
+  #howto{padding:48px 0}
+  .howto-steps{grid-template-columns:1fr;gap:32px}
+  .howto-steps::before{display:none}
+  .howto-step p{max-width:100%}
 
   /* ── SERVICES ── */
   #services{padding:48px 0}
@@ -785,15 +976,206 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
   font-size:11.5px;
   letter-spacing:.04em;
 }
+
+/* ═══════════════════════════════════════════
+   STICKY MOBILE CTA
+═══════════════════════════════════════════ */
+#sticky-cta{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;
+  z-index:190;
+  background:var(--g0);
+  border-top:1px solid rgba(200,219,201,.12);
+  padding:10px 14px;gap:10px;
+  align-items:center;
+  transform:translateY(100%);
+  transition:transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 -4px 24px rgba(0,0,0,.22);
+}
+@media(max-width:767px){
+  #sticky-cta{display:flex}
+  #sticky-cta.show{transform:translateY(0)}
+  body.sticky-show .wa-float{bottom:82px !important}
+  body.sticky-show .a11y-btn{bottom:82px !important}
+}
+.sticky-cta-main{
+  flex:1;background:var(--t0);color:#fff;
+  padding:11px 14px;border-radius:10px;
+  font-size:14px;font-weight:600;text-align:center;
+  transition:background .2s;
+}
+.sticky-cta-main:hover{background:var(--t1)}
+.sticky-cta-tel{
+  display:flex;align-items:center;gap:6px;
+  background:rgba(200,219,201,.08);
+  border:1px solid rgba(200,219,201,.15);
+  color:rgba(200,219,201,.88);
+  padding:11px 13px;border-radius:10px;
+  font-size:13px;font-weight:500;white-space:nowrap;
+  transition:background .2s;
+}
+.sticky-cta-tel:hover{background:rgba(200,219,201,.14)}
+
+/* ═══════════════════════════════════════════
+   BACK TO TOP
+═══════════════════════════════════════════ */
+#back-top{
+  position:fixed;right:28px;bottom:100px;
+  width:42px;height:42px;border-radius:50%;
+  background:var(--g0);
+  border:1.5px solid rgba(200,219,201,.18);
+  color:rgba(200,219,201,.75);
+  display:flex;align-items:center;justify-content:center;
+  z-index:195;cursor:pointer;
+  opacity:0;visibility:hidden;
+  transform:translateY(8px);
+  transition:opacity .3s,visibility .3s,transform .3s,background .2s;
+  box-shadow:0 4px 16px rgba(0,0,0,.2);
+}
+#back-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+#back-top:hover{background:var(--g1);color:var(--g4)}
+@media(max-width:767px){
+  #back-top{right:14px;bottom:88px;width:38px;height:38px}
+  body.sticky-show #back-top{bottom:82px}
+}
+
+/* ═══════════════════════════════════════════
+   FAQ SEARCH
+═══════════════════════════════════════════ */
+.faq-search-wrap{position:relative;margin-top:28px;margin-bottom:0}
+.faq-search-wrap svg{
+  position:absolute;left:16px;top:50%;transform:translateY(-50%);
+  color:var(--tl);pointer-events:none;
+}
+#faq-search{
+  width:100%;padding:13px 16px 13px 44px;
+  background:#fff;border:1.5px solid rgba(45,74,62,.1);
+  border-radius:14px;
+  font-family:'Outfit',sans-serif;font-size:14px;color:var(--tx);
+  outline:none;transition:border-color .2s;
+}
+#faq-search:focus{border-color:var(--g2)}
+#faq-search::placeholder{color:var(--tl)}
+body.dark #faq-search{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);color:var(--tx)}
+#faq-no-results{
+  text-align:center;padding:32px 0;font-size:14px;color:var(--tl);display:none;
+}
+
+/* ═══════════════════════════════════════════
+   COPY TOAST
+═══════════════════════════════════════════ */
+#copy-toast{
+  position:fixed;bottom:108px;left:50%;
+  transform:translateX(-50%) translateY(12px);
+  background:var(--g0);color:var(--g4);
+  border:1px solid rgba(200,219,201,.15);
+  padding:9px 20px;border-radius:100px;
+  font-size:13px;font-weight:500;
+  opacity:0;pointer-events:none;
+  z-index:999;
+  transition:opacity .25s,transform .25s;
+  white-space:nowrap;
+  box-shadow:0 4px 20px rgba(0,0,0,.25);
+}
+#copy-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ═══════════════════════════════════════════
+   OPEN STATUS BADGE
+═══════════════════════════════════════════ */
+.open-status-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:600;letter-spacing:.3px;
+  padding:7px 14px;border-radius:100px;margin-top:16px;
+}
+.open-status-badge::before{
+  content:'';width:7px;height:7px;border-radius:50%;flex-shrink:0;
+}
+.open-status-badge.open{background:rgba(76,175,110,.15);color:#5DBB7A}
+.open-status-badge.open::before{background:#5DBB7A;animation:pulse-green 2s ease-out infinite}
+.open-status-badge.closed{background:rgba(200,219,201,.08);color:rgba(200,219,201,.5)}
+.open-status-badge.closed::before{background:rgba(200,219,201,.35)}
+@keyframes pulse-green{0%{box-shadow:0 0 0 0 rgba(93,187,122,.45)}70%{box-shadow:0 0 0 8px rgba(93,187,122,0)}100%{box-shadow:0 0 0 0 rgba(93,187,122,0)}}
+
+/* ═══════════════════════════════════════════
+   EXIT INTENT POPUP
+═══════════════════════════════════════════ */
+#exit-overlay{
+  position:fixed;inset:0;z-index:9000;
+  background:rgba(0,0,0,.45);backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;
+  transition:opacity .3s,visibility .3s;
+  padding:20px;
+}
+#exit-overlay.show{opacity:1;visibility:visible}
+.exit-card{
+  background:var(--c0);border-radius:28px;
+  padding:clamp(32px,5vw,52px);
+  max-width:420px;width:100%;
+  text-align:center;position:relative;
+  box-shadow:0 40px 120px rgba(0,0,0,.3);
+  animation:fadeup .35s ease both;
+}
+body.dark .exit-card{background:var(--c1);border:1px solid rgba(255,255,255,.07)}
+#exit-close{
+  position:absolute;top:16px;right:16px;
+  background:none;border:none;
+  color:var(--tl);font-size:24px;line-height:1;
+  cursor:pointer;padding:6px;
+  transition:color .2s;
+}
+#exit-close:hover{color:var(--tx)}
+.exit-icon{font-size:46px;margin-bottom:14px;line-height:1}
+.exit-card h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(22px,4vw,30px);font-weight:300;
+  color:var(--tx);margin-bottom:10px;line-height:1.2;
+}
+.exit-card p{font-size:14px;color:var(--tm);line-height:1.7;margin-bottom:26px}
+.exit-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.exit-btn-wa{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#25D366;color:#fff;
+  padding:12px 22px;border-radius:100px;
+  font-size:14px;font-weight:600;
+  transition:all .2s;
+}
+.exit-btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.35)}
+.exit-btn-tel{
+  display:inline-flex;align-items:center;gap:7px;
+  background:transparent;color:var(--g1);
+  border:1.5px solid var(--g1);
+  padding:11px 20px;border-radius:100px;
+  font-size:14px;font-weight:500;
+  transition:all .2s;
+}
+.exit-btn-tel:hover{background:var(--g1);color:#fff}
+
+/* click-to-copy phone */
+.ci-phone{cursor:pointer;transition:color .2s;user-select:none}
+.ci-phone:hover{color:rgba(200,219,201,1) !important}
+.ci-phone .copy-icon{opacity:0;transition:opacity .2s;margin-left:4px;vertical-align:middle}
+.ci-phone:hover .copy-icon{opacity:.55}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MedicalClinic","name":"ADA Centro Psicológico","url":"https://adacentro.com","logo":"https://adacentro.com/logoada.webp","telephone":"+34955703738","email":"info@adacentro.com","address":{"@type":"PostalAddress","streetAddress":"Av. Hermano Cirilo, 37","addressLocality":"Sanlúcar la Mayor","postalCode":"41800","addressRegion":"Sevilla","addressCountry":"ES"},"geo":{"@type":"GeoCoordinates","latitude":37.3920,"longitude":-6.2030},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"16:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}],"medicalSpecialty":"MentalHealth","priceRange":"€€"}
+</script>
 </head>
 <body>
+
+<!-- ═══════════ PRELOADER ═══════════ -->
+<div id="preloader" aria-hidden="true">
+  <div class="pl-logo">
+    <img src="logoada.webp" alt="ADA Centro Psicológico">
+    <div class="pl-bar"><div class="pl-bar-inner"></div></div>
+  </div>
+</div>
 
 <!-- ═══════════ PANTALLA CANDADO ═══════════ -->
 <div id="pantalla-candado" role="dialog" aria-modal="true" aria-label="Acceso privado">
   <div class="lock-card">
     <div class="lock-logo">
-      <img src="logoada.png" alt="ADA Centro Psicológico" />
+      <img src="logoada.webp" alt="ADA Centro Psicológico" />
     </div>
     <h1 class="lock-title" data-i18n-html="lock.title">Propuesta de <em>Rediseño Web</em> de ADA Psicología</h1>
     <p class="lock-sub" data-i18n="lock.sub">Acceso privado y exclusivo para el equipo de la clínica</p>
@@ -829,7 +1211,7 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
 <nav id="nav">
   <div class="wrap nav-in">
     <a href="#hero" class="nav-logo">
-      <img src="logoada.png" alt="ADA Centro Psicológico" style="height:48px;width:auto;display:block">
+      <img src="logoada.webp" alt="ADA Centro Psicológico" style="height:48px;width:auto;display:block">
     </a>
     <div class="nav-links">
       <a href="#services" class="nl" data-i18n="nav.services">Servicios</a>
@@ -845,12 +1227,20 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
         <span class="lang-sep">|</span>
         <button class="lang-btn" data-lang="en">EN</button>
       </div>
+      <button class="dark-toggle" aria-label="Cambiar tema" title="Modo oscuro/claro">
+        <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
     </div>
     <!-- Acciones móvil: CTA visible + hamburguesa -->
     <div class="nav-mobile-actions">
       <a href="https://wa.me/34686480676" target="_blank" class="btn btn-t nav-mobile-cta" data-i18n="nav.cta">
         Pedir cita
       </a>
+      <button class="dark-toggle" aria-label="Cambiar tema">
+        <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -903,7 +1293,7 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
       <div class="hero-visual">
         <div class="hero-accent-line"></div>
         <div class="hero-photo-wrap">
-          <img src="juntos.png" alt="Adalgiza Andrade y Rooie Shaw, psicólogos de ADA Centro Psicológico" class="hero-photo">
+          <img src="juntos.webp" alt="Adalgiza Andrade y Rooie Shaw, psicólogos de ADA Centro Psicológico" class="hero-photo">
           <div class="hero-photo-caption">
             <strong>Adalgiza &amp; Rooie</strong>
             <small>ADA Centro Psicológico · Sanlúcar la Mayor</small>
@@ -935,6 +1325,49 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
   </div>
 </section>
 
+<!-- ═══════════ HOW IT WORKS ═══════════ -->
+<section id="howto">
+  <div class="wrap">
+    <div class="howto-header">
+      <p class="sec-label" data-i18n="howto.label">Cómo funciona</p>
+      <div class="bar-c"></div>
+      <h2 class="h2" data-i18n-html="howto.h2">Tres pasos hacia<br><em>tu bienestar</em></h2>
+    </div>
+    <div class="howto-steps">
+      <div class="howto-step">
+        <div class="howto-num-wrap">
+          <div class="howto-circle">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="howto-badge">1</div>
+        </div>
+        <h3 data-i18n="howto.s1.t">Contáctanos</h3>
+        <p data-i18n="howto.s1.d">Escríbenos o llámanos. En menos de 24 horas te damos una cita, sin esperas ni burocracia.</p>
+      </div>
+      <div class="howto-step">
+        <div class="howto-num-wrap">
+          <div class="howto-circle">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="howto-badge">2</div>
+        </div>
+        <h3 data-i18n="howto.s2.t">Primera sesión</h3>
+        <p data-i18n="howto.s2.d">Nos conocemos. Escuchamos tu historia sin juicios y definimos juntos los objetivos terapéuticos.</p>
+      </div>
+      <div class="howto-step">
+        <div class="howto-num-wrap">
+          <div class="howto-circle">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+          </div>
+          <div class="howto-badge">3</div>
+        </div>
+        <h3 data-i18n="howto.s3.t">Tu proceso</h3>
+        <p data-i18n="howto.s3.d">Avanzamos a tu ritmo con sesiones regulares. Tú llevas el control; nosotros ponemos el método.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ SERVICES ═══════════ -->
 <section id="services">
   <div class="wrap">
@@ -945,6 +1378,60 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
       <p class="lead" data-i18n="svc.lead">Servicios especializados para todas las etapas de la vida y todas las necesidades emocionales.</p>
     </div>
     <div class="svc-grid" id="svc-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════ WHY ADA ═══════════ -->
+<section id="why">
+  <div class="wrap">
+    <div class="why-header">
+      <p class="sec-label" data-i18n="why.label">Por qué ADA</p>
+      <div class="bar-c"></div>
+      <h2 class="h2" data-i18n-html="why.h2">Lo que nos hace<br><em>diferentes</em></h2>
+      <p class="lead" style="max-width:460px;margin:14px auto 0" data-i18n="why.lead">No somos el centro más grande. Somos el centro más tuyo.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-ico" style="background:rgba(45,74,62,.1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="12" y2="13"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="why.c1.t">Atención bilingüe</h3>
+          <p data-i18n="why.c1.d">Rooie Shaw atiende en inglés nativo. Adalgiza en español. Sin barreras idiomáticas para quien lo necesite.</p>
+        </div>
+        <div class="why-deco">ES·EN</div>
+      </div>
+      <div class="why-card">
+        <div class="why-ico" style="background:rgba(90,138,106,.1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5A8A6A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="why.c2.t">Psicooncología especializada</h3>
+          <p data-i18n="why.c2.d">Uno de los pocos centros del Aljarafe con psicóloga especialista en acompañamiento oncológico durante todas las fases.</p>
+        </div>
+        <div class="why-deco">♦</div>
+      </div>
+      <div class="why-card">
+        <div class="why-ico" style="background:rgba(201,123,74,.1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--t0)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="why.c3.t">Tu psicólogo, siempre</h3>
+          <p data-i18n="why.c3.d">Centro pequeño. Sin rotación de terapeutas. La misma persona que te conoce desde la primera sesión hasta el final del proceso.</p>
+        </div>
+        <div class="why-deco">∞</div>
+      </div>
+      <div class="why-card">
+        <div class="why-ico" style="background:rgba(123,106,138,.1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7B6A8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="why.c4.t">+25 años en el Aljarafe</h3>
+          <p data-i18n="why.c4.d">No somos una clínica nueva. Llevamos décadas acompañando a familias de Sanlúcar la Mayor y la comarca.</p>
+        </div>
+        <div class="why-deco">25</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -995,6 +1482,18 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
       <p class="sec-label" data-i18n="test.label">Testimonios</p>
       <div class="bar-c"></div>
       <h2 class="h2" data-i18n-html="test.h2">Lo que dicen quienes<br><em>ya dieron el paso</em></h2>
+      <a href="https://www.google.com/maps/search/ADA+Centro+Psicológico+Sanlúcar+la+Mayor+Sevilla" target="_blank" rel="noopener" class="google-badge" aria-label="Ver reseñas en Google">
+        <svg class="gb-g" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        <div>
+          <div class="gb-stars">★★★★★</div>
+          <div class="gb-label" data-i18n="reviews.label">Reseñas · Google</div>
+        </div>
+      </a>
     </div>
     <!-- Featured -->
     <div class="test-featured">
@@ -1042,6 +1541,69 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
   </div>
 </section>
 
+<!-- ═══════════ CALENDLY ═══════════ -->
+<!--
+  ACTIVAR CALENDLY (una tarde, gratis):
+  1. Crear cuenta en calendly.com (plan gratuito suficiente)
+  2. Configurar disponibilidad y tipo de cita (~30 min)
+  3. Copiar el enlace personal (ej: calendly.com/tu-nombre/primera-consulta)
+  4. Reemplazar el bloque .cal-placeholder con:
+     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+     <div class="calendly-inline-widget" data-url="TU-ENLACE?primary_color=c97b4a&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  Para desactivar: eliminar esta sección entera
+-->
+<section id="calendly">
+  <div class="wrap">
+    <div class="cal-header">
+      <p class="sec-label" data-i18n="cal.label">Reserva online</p>
+      <div class="bar-c"></div>
+      <h2 class="h2" data-i18n-html="cal.h2">Elige tú<br><em>el horario</em></h2>
+      <div class="cal-note">
+        <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="cal.n1">Sin lista de espera</span></span>
+        <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="cal.n2">Sin tarjeta de crédito</span></span>
+        <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="cal.n3">Confirmas en segundos</span></span>
+      </div>
+    </div>
+    <div class="cal-placeholder">
+      <div class="cal-ph-inner">
+        <div class="cal-ph-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/></svg>
+        </div>
+        <h3 data-i18n="cal.ph.h3">Reserva online en tiempo real</h3>
+        <p class="sub" data-i18n="cal.ph.sub">Activa Calendly (gratuito) en tres pasos:</p>
+        <div class="cal-steps">
+          <div class="cal-step">
+            <div class="cal-step-n">1</div>
+            <div class="cal-step-text">
+              <strong data-i18n="cal.step1.t">Crear cuenta gratuita</strong>
+              <span data-i18n="cal.step1.d">Regístrate en calendly.com — plan Free es suficiente</span>
+            </div>
+          </div>
+          <div class="cal-step">
+            <div class="cal-step-n">2</div>
+            <div class="cal-step-text">
+              <strong data-i18n="cal.step2.t">Configurar disponibilidad</strong>
+              <span data-i18n="cal.step2.d">Marca tus horas libres · aproximadamente 30 minutos</span>
+            </div>
+          </div>
+          <div class="cal-step">
+            <div class="cal-step-n">3</div>
+            <div class="cal-step-text">
+              <strong data-i18n="cal.step3.t">Pegar el enlace en la web</strong>
+              <span data-i18n="cal.step3.d">Copiamos tu URL de Calendly aquí y listo</span>
+            </div>
+          </div>
+        </div>
+        <a href="https://calendly.com" target="_blank" rel="noopener" class="btn btn-t" style="margin:0 auto">
+          <span data-i18n="cal.ph.cta">Ver Calendly gratis</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ FAQ ═══════════ -->
 <section id="faq">
   <div class="faq-wrap">
@@ -1050,7 +1612,73 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
       <div class="bar-c"></div>
       <h2 class="h2" data-i18n="faq.h2">Resolvemos tus dudas</h2>
     </div>
+    <div class="faq-search-wrap">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="search" id="faq-search" placeholder="Buscar pregunta…" autocomplete="off"/>
+    </div>
+    <p id="faq-no-results">No hay resultados para tu búsqueda.</p>
     <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- ═══════════ BLOG / RECURSOS ═══════════ -->
+<section id="blog">
+  <div class="wrap">
+    <div class="blog-header">
+      <div>
+        <p class="sec-label" data-i18n="blog.label">Recursos</p>
+        <div class="bar"></div>
+        <h2 class="h2" style="font-size:clamp(28px,3vw,40px)" data-i18n-html="blog.h2">Del equipo<br><em>ADA</em></h2>
+      </div>
+      <a href="#contact" class="btn btn-gd" style="align-self:flex-end" data-i18n="blog.cta">Ver todos los artículos</a>
+    </div>
+    <div class="blog-grid">
+      <!-- Artículo 1: Psicooncología — especialidad única de Adalgiza -->
+      <article class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,rgba(90,138,106,.14),rgba(45,74,62,.07))">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity=".6"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+        </div>
+        <div class="blog-body">
+          <span class="blog-pill" style="background:rgba(90,138,106,.1);color:#5A8A6A">Psicooncología</span>
+          <h3>El apoyo emocional que nadie menciona en el diagnóstico de cáncer</h3>
+          <p>Recibir un diagnóstico cambia todo en segundos. El acompañamiento psicológico especializado marca la diferencia en cómo vivimos cada etapa del proceso oncológico.</p>
+          <div class="blog-foot">
+            <span class="blog-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>4 min</span>
+            <a href="#contact" class="blog-link" data-i18n="blog.read">Leer <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <!-- Artículo 2: Altas capacidades — especialidad de Rooie -->
+      <article class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,rgba(201,123,74,.12),rgba(138,106,80,.07))">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--t0)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity=".55"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="blog-body">
+          <span class="blog-pill" style="background:rgba(201,123,74,.1);color:var(--t1)">Infanto-Juvenil</span>
+          <h3>Altas capacidades: 6 señales que los padres suelen no ver</h3>
+          <p>Un niño con altas capacidades puede parecer "difícil" antes de recibir el diagnóstico correcto. Rooie Shaw explica las señales clave y cuándo pedir una evaluación.</p>
+          <div class="blog-foot">
+            <span class="blog-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>5 min</span>
+            <a href="#contact" class="blog-link" data-i18n="blog.read">Leer <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <!-- Artículo 3: Primera consulta — para nuevos pacientes -->
+      <article class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,rgba(45,74,62,.1),rgba(74,117,96,.06))">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity=".55"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="blog-body">
+          <span class="blog-pill" style="background:rgba(45,74,62,.08);color:var(--g1)">Para empezar</span>
+          <h3>Tu primera consulta: qué pasa en esa hora y cómo llegar tranquilo</h3>
+          <p>El miedo a dar el primer paso es completamente normal. Te contamos qué ocurre en la primera sesión y por qué no tienes que preparar nada especial.</p>
+          <div class="blog-foot">
+            <span class="blog-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>3 min</span>
+            <a href="#contact" class="blog-link" data-i18n="blog.read">Leer <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -1066,6 +1694,7 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
         <div class="bar"></div>
         <h2 class="h2-lt" style="margin-bottom:44px" data-i18n-html="cont.h2">Estamos aquí<br><em>para escucharte</em></h2>
         <div id="contact-info" style="display:flex;flex-direction:column;gap:26px"></div>
+        <div id="open-badge"></div>
         <div class="nica-box">
           <div class="nt" data-i18n="cont.nica.label">REGISTRO OFICIAL</div>
           <div class="nv" data-i18n="cont.nica.val">Centro sanitario NICA Nº 43.692</div>
@@ -1118,6 +1747,15 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
         </form>
       </div>
     </div>
+    <div class="map-wrap">
+      <iframe
+        src="https://maps.google.com/maps?q=Av+Hermano+Cirilo+37+Sanlucar+la+Mayor+Sevilla+Spain&output=embed&z=15&hl=es"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="ADA Centro Psicológico · Av. Hermano Cirilo 37, Sanlúcar la Mayor"
+        aria-label="Mapa de ubicación de ADA Centro Psicológico">
+      </iframe>
+    </div>
   </div>
 </section>
 
@@ -1125,7 +1763,7 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
 <footer id="footer">
   <div class="wrap footer-in">
     <div class="footer-logo">
-      <img src="logoada.png" alt="ADA Centro Psicológico" style="height:40px;width:auto;display:block;opacity:.85;filter:brightness(0) invert(1)">
+      <img src="logoada.webp" alt="ADA Centro Psicológico" loading="lazy" style="height:40px;width:auto;display:block;opacity:.85;filter:brightness(0) invert(1)">
       <span class="nica" style="margin-top:8px;display:block">NICA Nº 43.692 · Sanlúcar la Mayor, Sevilla</span>
     </div>
     <div class="footer-links">
@@ -1137,21 +1775,71 @@ textarea.field{resize:vertical;font-family:'Outfit',sans-serif}
     </div>
     <div class="footer-copy">
       <div>© 2026 ADA Centro Psicológico</div>
-      <div><a href="#" data-i18n="foot.privacy">Privacidad</a> · <a href="#" data-i18n="foot.legal">Aviso legal</a> · <a href="#" data-i18n="foot.cookies">Cookies</a></div>
+      <div><a href="privacidad.html" data-i18n="foot.privacy">Privacidad</a> · <a href="aviso-legal.html" data-i18n="foot.legal">Aviso legal</a> · <a href="#" data-i18n="foot.cookies">Cookies</a></div>
     </div>
   </div>
 </footer>
 
 <!-- ═══════════ WA FLOAT ═══════════ -->
+<button class="a11y-btn" id="a11y-btn" aria-label="Aumentar tamaño de texto" title="Texto grande">A+</button>
+
 <a href="https://wa.me/34686480676" target="_blank" class="wa-float" title="WhatsApp">
   <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
+
+<!-- ═══════════ STICKY CTA MÓVIL ═══════════ -->
+<div id="sticky-cta" aria-label="Acceso rápido">
+  <a href="https://wa.me/34686480676" class="sticky-cta-main" id="sticky-wa">Reservar cita</a>
+  <a href="tel:955703738" class="sticky-cta-tel" id="sticky-tel">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.18 2 2 0 0 1 3.56 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l1.06-1.02a2 2 0 0 1 2.12-.44 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    955 703 738
+  </a>
+</div>
+
+<!-- ═══════════ BACK TO TOP ═══════════ -->
+<button id="back-top" aria-label="Volver arriba" title="Volver arriba">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- ═══════════ EXIT INTENT ═══════════ -->
+<div id="exit-overlay" role="dialog" aria-modal="true" aria-labelledby="exit-title">
+  <div class="exit-card">
+    <button id="exit-close" aria-label="Cerrar">×</button>
+    <div class="exit-icon">💬</div>
+    <h3 id="exit-title">¿Tienes alguna duda antes de irte?</h3>
+    <p>Estamos aquí para ayudarte. Sin compromiso ni listas de espera.</p>
+    <div class="exit-btns">
+      <a href="https://wa.me/34686480676" target="_blank" class="exit-btn-wa">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a href="tel:955703738" class="exit-btn-tel">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.18 2 2 0 0 1 3.56 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l1.06-1.02a2 2 0 0 1 2.12-.44 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        955 703 738
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ COPY TOAST ═══════════ -->
+<div id="copy-toast" aria-live="polite" aria-atomic="true">✓ Copiado</div>
 
 <script>
 /* ─────────────────────────────────────────────────
    LANGUAGE
 ───────────────────────────────────────────────── */
 let currentLang = localStorage.getItem('ada-lang') || 'es';
+
+/* ─────────────────────────────────────────────────
+   CONFIG — DATOS DE CONTACTO (editar aquí, propaga a toda la web)
+───────────────────────────────────────────────── */
+const CONFIG = {
+  phone:        '955 703 738',
+  phoneHref:    '955703738',
+  whatsapp:     '686 480 676',
+  whatsappHref: '34686480676',
+  email:        'info@adacentro.com',
+};
 
 /* ─────────────────────────────────────────────────
    DATA — ESPAÑOL
@@ -1186,13 +1874,13 @@ const PILLARS = [
 const TEAM = [
   {
     name:'Adalgiza Andrade Agudelo',role:'Psicóloga Clínica',
-    photo:'ella.png',
+    photo:'ella.webp',
     creds:['Licenciada en Psicología · Universidad del Valle, Colombia','Máster en Psicología Clínica y de la Salud','Especialista en TCC y terapias de tercera generación'],
     specs:['Ansiedad y depresión','Psicooncología','Duelo y pérdida','Estrés y burnout'],
   },
   {
     name:'Rooie Shaw',role:'Psicóloga Infantojuvenil',
-    photo:'el.png',
+    photo:'el.webp',
     creds:['Grado en Psicología · The Open University, Inglaterra','Especialista en pedagogía Montessori','Atención bilingüe español-inglés'],
     specs:['Psicología infantil','Altas capacidades','NEE y aprendizaje','Orientación familiar'],
   },
@@ -1211,15 +1899,15 @@ const FAQS = [
   {q:'¿Las sesiones son completamente confidenciales?',a:'Sí, absolutamente. El secreto profesional es uno de los pilares de nuestra práctica. Todo lo que se hable en consulta queda entre el psicólogo y el paciente, salvo en situaciones de riesgo grave contempladas por ley.'},
   {q:'¿Ofrecéis psicología online con la misma calidad?',a:'Sí. Ofrecemos sesiones por videollamada con la misma calidad que las presenciales. Es ideal si vives lejos, tienes movilidad reducida o prefieres la comodidad de tu hogar. El centro es bilingüe, por lo que también atendemos en inglés.'},
   {q:'¿Atendéis a niños y adolescentes?',a:'Sí, disponemos de servicio especializado de atención infanto-juvenil. Trabajamos con niños desde edades tempranas, adolescentes, y también con sus familias. Somos especialistas en altas capacidades y necesidades educativas especiales (NEE).'},
-  {q:'¿Cómo puedo pedir una cita?',a:'Puedes contactarnos por teléfono (955 703 738), WhatsApp (686 480 676) o email (info@adacentro.com). También puedes usar el formulario de contacto. Respondemos lo antes posible dentro del horario de atención.'},
+  {q:'¿Cómo puedo pedir una cita?',a:`Puedes contactarnos por teléfono (${CONFIG.phone}), WhatsApp (${CONFIG.whatsapp}) o email (${CONFIG.email}). También puedes usar el formulario de contacto. Respondemos lo antes posible dentro del horario de atención.`},
   {q:'¿Qué diferencia a ADA de otros centros?',a:'Combinamos rigor científico con un trato profundamente humano. Somos un equipo pequeño y especializado, lo que nos permite dar una atención personalizada real. Además somos bilingües, cubrimos todas las edades y ofrecemos atención presencial y online.'},
 ];
 
 const CONTACT_INFO = [
   {ico:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--t0)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`,label:'Dirección',val:'Av. Hermano Cirilo, 37\n41800 Sanlúcar la Mayor, Sevilla'},
-  {ico:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--t0)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.18 2 2 0 0 1 3.56 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l1.06-1.02a2 2 0 0 1 2.12-.44 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,label:'Teléfono',val:'955 703 738'},
-  {ico:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--t0)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,label:'WhatsApp',val:'686 480 676'},
-  {ico:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--t0)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,label:'Email',val:'info@adacentro.com'},
+  {ico:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--t0)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.18 2 2 0 0 1 3.56 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l1.06-1.02a2 2 0 0 1 2.12-.44 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,label:'Teléfono',val:CONFIG.phone},
+  {ico:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--t0)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,label:'WhatsApp',val:CONFIG.whatsapp},
+  {ico:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--t0)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,label:'Email',val:CONFIG.email},
   {ico:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--t0)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,label:'Horario',val:'Lun–Vie: 9:00–14:00 y 16:00–22:00\nSáb: 9:00–14:00'},
 ];
 
@@ -1256,13 +1944,13 @@ const PILLARS_EN = [
 const TEAM_EN = [
   {
     name:'Adalgiza Andrade Agudelo',role:'Clinical Psychologist',
-    photo:'ella.png',
+    photo:'ella.webp',
     creds:['Degree in Psychology · Universidad del Valle, Colombia','Master\'s in Clinical and Health Psychology','Specialist in CBT and third-generation therapies'],
     specs:['Anxiety and depression','Psycho-oncology','Grief and loss','Stress and burnout'],
   },
   {
     name:'Rooie Shaw',role:'Child & Adolescent Psychologist',
-    photo:'el.png',
+    photo:'el.webp',
     creds:['Degree in Psychology · The Open University, England','Specialist in Montessori pedagogy','Bilingual care: Spanish–English'],
     specs:['Child psychology','High abilities','SEN and learning','Family guidance'],
   },
@@ -1281,15 +1969,15 @@ const FAQS_EN = [
   {q:'Are sessions completely confidential?',a:'Yes, absolutely. Professional secrecy is one of the pillars of our practice. Everything discussed in the session remains between the psychologist and the patient, except in situations of serious risk provided for by law.'},
   {q:'Do you offer online psychology with the same quality?',a:'Yes. We offer video-call sessions with the same quality as in-person appointments. Ideal if you live far away, have reduced mobility or prefer the comfort of your home. The centre is bilingual, so we also see clients in English.'},
   {q:'Do you see children and adolescents?',a:'Yes, we have a specialised child and adolescent service. We work with young children, teenagers, and also their families. We specialise in high abilities and special educational needs (SEN).'},
-  {q:'How can I book an appointment?',a:'You can contact us by phone (955 703 738), WhatsApp (686 480 676) or email (info@adacentro.com). You can also use the contact form. We reply as soon as possible within opening hours.'},
+  {q:'How can I book an appointment?',a:`You can contact us by phone (${CONFIG.phone}), WhatsApp (${CONFIG.whatsapp}) or email (${CONFIG.email}). You can also use the contact form. We reply as soon as possible within opening hours.`},
   {q:'What sets ADA apart from other centres?',a:'We combine scientific rigour with a deeply human approach. We are a small, specialised team, which allows us to provide truly personalised care. We are also bilingual, cover all ages, and offer both in-person and online appointments.'},
 ];
 
 const CONTACT_INFO_EN = [
   {ico:CONTACT_INFO[0].ico,label:'Address',val:'Av. Hermano Cirilo, 37\n41800 Sanlúcar la Mayor, Seville'},
-  {ico:CONTACT_INFO[1].ico,label:'Phone',val:'955 703 738'},
-  {ico:CONTACT_INFO[2].ico,label:'WhatsApp',val:'686 480 676'},
-  {ico:CONTACT_INFO[3].ico,label:'Email',val:'info@adacentro.com'},
+  {ico:CONTACT_INFO[1].ico,label:'Phone',val:CONFIG.phone},
+  {ico:CONTACT_INFO[2].ico,label:'WhatsApp',val:CONFIG.whatsapp},
+  {ico:CONTACT_INFO[3].ico,label:'Email',val:CONFIG.email},
   {ico:CONTACT_INFO[4].ico,label:'Hours',val:'Mon–Fri: 9:00–14:00 and 16:00–22:00\nSat: 9:00–14:00'},
 ];
 
@@ -1315,8 +2003,18 @@ const I18N = {
     'prob.h2':'Muchas personas<br>sienten lo mismo.<br><em>No estás solo.</em>',
     'prob.lead':'Lo que sientes tiene nombre y tiene solución. Llevamos más de veinticinco años ayudando a personas como tú a encontrar su camino hacia el bienestar.',
     'prob.cta':'Hablemos de lo que necesitas',
+    'howto.label':'Cómo funciona',
+    'howto.h2':'Tres pasos hacia<br><em>tu bienestar</em>',
+    'howto.s1.t':'Contáctanos','howto.s1.d':'Escríbenos o llámanos. En menos de 24 horas te damos una cita, sin esperas ni burocracia.',
+    'howto.s2.t':'Primera sesión','howto.s2.d':'Nos conocemos. Escuchamos tu historia sin juicios y definimos juntos los objetivos terapéuticos.',
+    'howto.s3.t':'Tu proceso','howto.s3.d':'Avanzamos a tu ritmo con sesiones regulares. Tú llevas el control; nosotros ponemos el método.',
     'svc.label':'Especialidades','svc.h2':'Lo que tratamos en ADA',
     'svc.lead':'Servicios especializados para todas las etapas de la vida y todas las necesidades emocionales.',
+    'why.label':'Por qué ADA','why.h2':'Lo que nos hace<br><em>diferentes</em>','why.lead':'No somos el centro más grande. Somos el centro más tuyo.',
+    'why.c1.t':'Atención bilingüe','why.c1.d':'Rooie Shaw atiende en inglés nativo. Adalgiza en español. Sin barreras idiomáticas para quien lo necesite.',
+    'why.c2.t':'Psicooncología especializada','why.c2.d':'Uno de los pocos centros del Aljarafe con psicóloga especialista en acompañamiento oncológico durante todas las fases.',
+    'why.c3.t':'Tu psicólogo, siempre','why.c3.d':'Centro pequeño. Sin rotación de terapeutas. La misma persona que te conoce desde la primera sesión hasta el final del proceso.',
+    'why.c4.t':'+25 años en el Aljarafe','why.c4.d':'No somos una clínica nueva. Llevamos décadas acompañando a familias de Sanlúcar la Mayor y la comarca.',
     'appr.label':'Nuestro enfoque',
     'appr.h2':'Psicología que se<br><em>adapta a ti</em>',
     'appr.lead':'No creemos en soluciones genéricas. Nuestra metodología integra los enfoques más eficaces de la psicología actual, adaptados a tus necesidades, historia y objetivos.',
@@ -1328,6 +2026,15 @@ const I18N = {
     'team.specs':'Especialidades',
     'test.label':'Testimonios',
     'test.h2':'Lo que dicen quienes<br><em>ya dieron el paso</em>',
+    'reviews.label':'Reseñas · Google',
+    'cal.label':'Reserva online','cal.h2':'Elige tú<br><em>el horario</em>',
+    'cal.n1':'Sin lista de espera','cal.n2':'Sin tarjeta de crédito','cal.n3':'Confirmas en segundos',
+    'cal.ph.h3':'Reserva online en tiempo real','cal.ph.sub':'Activa Calendly (gratuito) en tres pasos:',
+    'cal.step1.t':'Crear cuenta gratuita','cal.step1.d':'Regístrate en calendly.com — plan Free es suficiente',
+    'cal.step2.t':'Configurar disponibilidad','cal.step2.d':'Marca tus horas libres · aproximadamente 30 minutos',
+    'cal.step3.t':'Pegar el enlace en la web','cal.step3.d':'Copiamos tu URL de Calendly aquí y listo',
+    'cal.ph.cta':'Ver Calendly gratis',
+    'blog.label':'Recursos','blog.h2':'Del equipo<br><em>ADA</em>','blog.cta':'Ver todos los artículos','blog.read':'Leer',
     'cta.label':'El primer paso',
     'cta.h2':'Reserva tu primera<br><em>consulta hoy</em>',
     'cta.lead':'Sin listas de espera. Sin burocracia. Solo llámanos o escríbenos y buscamos el horario que mejor se adapte a ti.',
@@ -1373,8 +2080,18 @@ const I18N = {
     'prob.h2':'Many people<br>feel the same.<br><em>You are not alone.</em>',
     'prob.lead':'What you feel has a name and a solution. For over twenty-five years we have been helping people like you find their path to wellbeing.',
     'prob.cta':'Let\'s talk about what you need',
+    'howto.label':'How it works',
+    'howto.h2':'Three steps towards<br><em>your wellbeing</em>',
+    'howto.s1.t':'Contact us','howto.s1.d':'Write or call us. Within 24 hours we give you an appointment — no waiting lists, no paperwork.',
+    'howto.s2.t':'First session','howto.s2.d':'We get to know each other. We listen to your story without judgement and define the therapeutic goals together.',
+    'howto.s3.t':'Your process','howto.s3.d':'We move at your pace with regular sessions. You are in control; we bring the method.',
     'svc.label':'Specialties','svc.h2':'What we treat at ADA',
     'svc.lead':'Specialised services for every stage of life and every emotional need.',
+    'why.label':'Why ADA','why.h2':'What makes us<br><em>different</em>','why.lead':'We are not the biggest centre. We are the most personal one.',
+    'why.c1.t':'Bilingual care','why.c1.d':'Rooie Shaw sees clients in native English. Adalgiza in Spanish. No language barriers for those who need it.',
+    'why.c2.t':'Specialised psycho-oncology','why.c2.d':'One of the few centres in the Aljarafe with a psychologist specialised in oncological support through all stages.',
+    'why.c3.t':'Your psychologist, always','why.c3.d':'Small centre. No therapist rotation. The same person who knows you from your very first session to the end of your process.',
+    'why.c4.t':'+25 years in the Aljarafe','why.c4.d':'We are not a new clinic. We have spent decades supporting families in Sanlúcar la Mayor and the surrounding area.',
     'appr.label':'Our approach',
     'appr.h2':'Psychology that<br><em>adapts to you</em>',
     'appr.lead':'We don\'t believe in generic solutions. Our methodology integrates the most effective approaches in modern psychology, tailored to your needs, history and goals.',
@@ -1386,6 +2103,15 @@ const I18N = {
     'team.specs':'Specialties',
     'test.label':'Testimonials',
     'test.h2':'What those who<br><em>took the step say</em>',
+    'reviews.label':'Reviews · Google',
+    'cal.label':'Online booking','cal.h2':'You choose<br><em>the time</em>',
+    'cal.n1':'No waiting lists','cal.n2':'No credit card','cal.n3':'Confirm in seconds',
+    'cal.ph.h3':'Real-time online booking','cal.ph.sub':'Activate Calendly (free) in three steps:',
+    'cal.step1.t':'Create a free account','cal.step1.d':'Sign up at calendly.com — Free plan is enough',
+    'cal.step2.t':'Set your availability','cal.step2.d':'Choose your free time slots · about 30 minutes',
+    'cal.step3.t':'Paste the link into the site','cal.step3.d':'We copy your Calendly URL here and done',
+    'cal.ph.cta':'See Calendly for free',
+    'blog.label':'Resources','blog.h2':'From the<br><em>ADA team</em>','blog.cta':'See all articles','blog.read':'Read',
     'cta.label':'The first step',
     'cta.h2':'Book your first<br><em>consultation today</em>',
     'cta.lead':'No waiting lists. No bureaucracy. Just call or message us and we\'ll find the time that works best for you.',
@@ -1486,12 +2212,19 @@ function renderTeam(teamData, specsLabel) {
 }
 
 function renderContactInfo(info) {
-  document.getElementById('contact-info').innerHTML = info.map(it =>
-    `<div class="ci-item">
+  document.getElementById('contact-info').innerHTML = info.map(it => {
+    const isPhone = it.val === CONFIG.phone;
+    const valHtml = isPhone
+      ? `<div class="ci-val ci-phone" data-copy="${it.val}" title="Clic para copiar">
+          ${it.val}
+          <svg class="copy-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </div>`
+      : `<div class="ci-val">${it.val}</div>`;
+    return `<div class="ci-item">
       <div class="ci-ico">${it.ico}</div>
-      <div><div class="ci-label">${it.label}</div><div class="ci-val">${it.val}</div></div>
-    </div>`
-  ).join('');
+      <div><div class="ci-label">${it.label}</div>${valHtml}</div>
+    </div>`;
+  }).join('');
 }
 
 function renderFaq(faqs) {
@@ -1523,6 +2256,11 @@ function renderFaq(faqs) {
    TESTIMONIALS
 ───────────────────────────────────────────────── */
 let activeTest = 0;
+let testTimer;
+function startTestTimer(){
+  clearInterval(testTimer);
+  testTimer = setInterval(()=>{ activeTest = (activeTest+1) % REVIEWS.length; renderTestimonials(activeTest); }, 5000);
+}
 
 function renderTestimonials(idx) {
   const reviews = currentLang === 'en' ? REVIEWS_EN : REVIEWS;
@@ -1536,7 +2274,7 @@ function renderTestimonials(idx) {
     `<button class="tdot${i===idx?' active':''}" data-i="${i}"></button>`
   ).join('');
   document.querySelectorAll('.tdot').forEach(d =>
-    d.addEventListener('click', () => { activeTest = +d.dataset.i; renderTestimonials(activeTest); })
+    d.addEventListener('click', () => { activeTest = +d.dataset.i; renderTestimonials(activeTest); startTestTimer(); })
   );
   document.getElementById('test-minis').innerHTML = reviews.map((rv,i) =>
     `<div class="test-mini${i===idx?' active':''}" data-i="${i}">
@@ -1546,11 +2284,43 @@ function renderTestimonials(idx) {
     </div>`
   ).join('');
   document.querySelectorAll('.test-mini').forEach(m =>
-    m.addEventListener('click', () => { activeTest = +m.dataset.i; renderTestimonials(activeTest); })
+    m.addEventListener('click', () => { activeTest = +m.dataset.i; renderTestimonials(activeTest); startTestTimer(); })
   );
 }
 
-setInterval(() => { activeTest = (activeTest + 1) % REVIEWS.length; renderTestimonials(activeTest); }, 5000);
+startTestTimer();
+
+/* ─────────────────────────────────────────────────
+   ANIMATED STATS
+───────────────────────────────────────────────── */
+(function(){
+  const statsEl = document.querySelector('.hero-stats');
+  if (!statsEl) return;
+  const defs = [
+    {el: statsEl.querySelectorAll('.hero-stat')[0]?.querySelector('.n'), target: 25,
+     format: v => '+' + v},
+    {el: statsEl.querySelectorAll('.hero-stat')[1]?.querySelector('.n'), target: 1200,
+     format: v => (v >= 1000 ? Math.floor(v/1000) + '.' + String(v%1000).padStart(3,'0') : String(v)) + '+'},
+    {el: statsEl.querySelectorAll('.hero-stat')[2]?.querySelector('.n'), target: 100,
+     format: v => v + '%'},
+  ];
+  let fired = false;
+  new IntersectionObserver(entries => {
+    if (!entries[0].isIntersecting || fired) return;
+    fired = true;
+    defs.forEach(({el, target, format}) => {
+      if (!el) return;
+      const dur = 1800, start = performance.now();
+      const tick = now => {
+        const t = Math.min((now - start) / dur, 1);
+        const ease = 1 - Math.pow(1 - t, 3);
+        el.textContent = format(Math.round(ease * target));
+        if (t < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+  }, {threshold: 0.5}).observe(statsEl);
+})();
 
 /* ─────────────────────────────────────────────────
    SET LANGUAGE
@@ -1590,7 +2360,26 @@ function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(btn =>
     btn.classList.toggle('active', btn.dataset.lang === lang)
   );
+
+  updateOpenBadge();
 }
+
+/* ─────────────────────────────────────────────────
+   ACCESSIBILITY TOGGLE
+───────────────────────────────────────────────── */
+(function(){
+  const btn = document.getElementById('a11y-btn');
+  if (!btn) return;
+  if (localStorage.getItem('ada-a11y') === '1') {
+    document.body.classList.add('a11y-large');
+    btn.classList.add('active');
+  }
+  btn.addEventListener('click', () => {
+    const on = document.body.classList.toggle('a11y-large');
+    btn.classList.toggle('active', on);
+    localStorage.setItem('ada-a11y', on ? '1' : '0');
+  });
+})();
 
 /* ─────────────────────────────────────────────────
    CONTACT FORM
@@ -1669,6 +2458,9 @@ document.querySelectorAll('[data-lang]').forEach(btn => {
 
 setLang(currentLang);
 
+document.querySelectorAll('a[href^="https://wa.me/"]').forEach(a => a.href = `https://wa.me/${CONFIG.whatsappHref}?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20ADA%20Centro%20Psicol%C3%B3gico.`);
+document.querySelectorAll('a[href^="tel:"]').forEach(a => a.href = `tel:${CONFIG.phoneHref}`);
+
 /* ─────────────────────────────────────────────────
    FONTS FALLBACK (if offline, still looks decent)
 ───────────────────────────────────────────────── */
@@ -1676,6 +2468,229 @@ document.fonts && document.fonts.ready.then(() => {
   document.body.style.opacity = '1';
 });
 document.body.style.opacity = '1';
+
+/* ─────────────────────────────────────────────────
+   PRELOADER
+───────────────────────────────────────────────── */
+(function(){
+  const pl = document.getElementById('preloader');
+  if (!pl) return;
+  function hide(){ pl.classList.add('done'); }
+  if (document.readyState === 'complete') setTimeout(hide, 300);
+  else window.addEventListener('load', () => setTimeout(hide, 300));
+})();
+
+/* ─────────────────────────────────────────────────
+   CUSTOM CURSOR
+───────────────────────────────────────────────── */
+(function(){
+  if (!window.matchMedia('(pointer:fine)').matches) return;
+  const cur = document.createElement('div');
+  cur.className = 'cursor';
+  document.body.appendChild(cur);
+  document.addEventListener('mousemove', e => {
+    cur.style.left = e.clientX + 'px';
+    cur.style.top  = e.clientY + 'px';
+  }, {passive:true});
+  const SEL = 'a,button,.svc-card,.team-card,.prob-card,.blog-card,.test-mini,.why-card,.howto-step,.faq-btn';
+  document.addEventListener('mouseover', e => { if (e.target.closest(SEL)) cur.classList.add('grow'); });
+  document.addEventListener('mouseout',  e => { if (e.target.closest(SEL)) cur.classList.remove('grow'); });
+})();
+
+/* ─────────────────────────────────────────────────
+   SCROLL REVEAL
+───────────────────────────────────────────────── */
+(function(){
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.1, rootMargin: '0px 0px -30px 0px'});
+
+  function applyReveal(){
+    document.querySelectorAll('.svc-card').forEach((el,i)  => { el.classList.add('sr'); el.style.transitionDelay = (i%3*0.1)+'s'; });
+    document.querySelectorAll('.prob-card').forEach((el,i) => { el.classList.add('sr'); el.style.transitionDelay = (i*0.08)+'s'; });
+    document.querySelectorAll('.team-card').forEach((el,i) => { el.classList.add('sr'); el.style.transitionDelay = (i*0.12)+'s'; });
+    document.querySelectorAll('.blog-card').forEach((el,i) => { el.classList.add('sr'); el.style.transitionDelay = (i*0.1)+'s'; });
+    document.querySelectorAll('.why-card').forEach((el,i)  => { el.classList.add('sr'); el.style.transitionDelay = (i*0.1)+'s'; });
+    document.querySelectorAll('.howto-step').forEach((el,i)=> { el.classList.add('sr'); el.style.transitionDelay = (i*0.15)+'s'; });
+    document.querySelectorAll('.pillar').forEach((el,i)    => { el.classList.add('sr'); el.style.transitionDelay = (i*0.1)+'s'; });
+    document.querySelectorAll('.faq-item').forEach((el,i)  => { el.classList.add('sr'); el.style.transitionDelay = (i*0.06)+'s'; });
+    document.querySelectorAll('.svc-header,.howto-header,.why-header,.cal-header,.blog-header').forEach(el => el.classList.add('sr'));
+    document.querySelectorAll('.prob-sticky').forEach(el => el.classList.add('sr-l'));
+    const vh = window.innerHeight;
+    document.querySelectorAll('.sr,.sr-l').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < vh) el.classList.add('visible');
+      else io.observe(el);
+    });
+  }
+  applyReveal();
+})();
+
+/* ─────────────────────────────────────────────────
+   DARK MODE
+───────────────────────────────────────────────── */
+(function(){
+  if (localStorage.getItem('ada-dark') === '1') document.body.classList.add('dark');
+  document.querySelectorAll('.dark-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const on = document.body.classList.toggle('dark');
+      localStorage.setItem('ada-dark', on ? '1' : '0');
+    });
+  });
+})();
+
+/* ─────────────────────────────────────────────────
+   STICKY CTA MOBILE
+───────────────────────────────────────────────── */
+(function(){
+  const bar = document.getElementById('sticky-cta');
+  if (!bar) return;
+  let shown = false;
+  window.addEventListener('scroll', () => {
+    const show = window.scrollY > 400;
+    if (show === shown) return;
+    shown = show;
+    bar.classList.toggle('show', show);
+    document.body.classList.toggle('sticky-show', show);
+  }, {passive: true});
+})();
+
+/* ─────────────────────────────────────────────────
+   BACK TO TOP
+───────────────────────────────────────────────── */
+(function(){
+  const btn = document.getElementById('back-top');
+  if (!btn) return;
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('show', window.scrollY > 400);
+  }, {passive: true});
+  btn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+})();
+
+/* ─────────────────────────────────────────────────
+   FAQ SEARCH
+───────────────────────────────────────────────── */
+(function(){
+  const inp = document.getElementById('faq-search');
+  const noRes = document.getElementById('faq-no-results');
+  if (!inp) return;
+  inp.addEventListener('input', () => {
+    const q = inp.value.toLowerCase().trim();
+    const items = document.querySelectorAll('.faq-item');
+    let visible = 0;
+    items.forEach(item => {
+      const qt = item.querySelector('.faq-btn span')?.textContent.toLowerCase() || '';
+      const at = item.querySelector('.faq-body p')?.textContent.toLowerCase() || '';
+      const match = !q || qt.includes(q) || at.includes(q);
+      item.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    if (noRes) noRes.style.display = visible === 0 && q ? 'block' : 'none';
+  });
+})();
+
+/* ─────────────────────────────────────────────────
+   OPEN STATUS BADGE
+───────────────────────────────────────────────── */
+function getOpenStatus() {
+  try {
+    const sp = new Date(new Date().toLocaleString('en-US', {timeZone: 'Europe/Madrid'}));
+    const day = sp.getDay(); // 0=Dom
+    const t = sp.getHours() * 60 + sp.getMinutes();
+    const isOpen =
+      (day >= 1 && day <= 5 && ((t >= 540 && t < 840) || (t >= 960 && t < 1320))) ||
+      (day === 6 && t >= 540 && t < 840);
+    if (isOpen) return {open: true};
+    if (day >= 1 && day <= 5) {
+      if (t < 540) return {open: false, when: 'today', time: '9:00'};
+      if (t >= 840 && t < 960) return {open: false, when: 'today', time: '16:00'};
+    }
+    let d = (day + 1) % 7, ahead = 1;
+    while (d === 0) { d = (d + 1) % 7; ahead++; }
+    return {open: false, when: 'next', day: d, tomorrow: ahead === 1, time: '9:00'};
+  } catch(e) { return null; }
+}
+
+function updateOpenBadge() {
+  const badge = document.getElementById('open-badge');
+  if (!badge) return;
+  const s = getOpenStatus();
+  if (!s) { badge.innerHTML = ''; return; }
+  const isEN = currentLang === 'en';
+  let html, cls;
+  if (s.open) {
+    cls = 'open';
+    html = isEN ? 'Open now ✓' : 'Abierto ahora ✓';
+  } else {
+    cls = 'closed';
+    const D_ES = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+    const D_EN = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    let when;
+    if (s.when === 'today') {
+      when = isEN ? `today at ${s.time}` : `hoy a las ${s.time}`;
+    } else if (s.tomorrow) {
+      when = isEN ? `tomorrow at ${s.time}` : `mañana a las ${s.time}`;
+    } else {
+      when = isEN ? `${D_EN[s.day]} at ${s.time}` : `el ${D_ES[s.day]} a las ${s.time}`;
+    }
+    html = isEN ? `Opens ${when}` : `Abrimos ${when}`;
+  }
+  badge.innerHTML = `<div class="open-status-badge ${cls}">${html}</div>`;
+}
+
+/* ─────────────────────────────────────────────────
+   CLICK-TO-COPY PHONE
+───────────────────────────────────────────────── */
+function showToast(msg) {
+  const t = document.getElementById('copy-toast');
+  if (!t) return;
+  t.textContent = msg || '✓ Copiado';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+document.getElementById('contact-info').addEventListener('click', e => {
+  const el = e.target.closest('[data-copy]');
+  if (!el) return;
+  const txt = el.dataset.copy;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt).then(() => showToast(currentLang === 'en' ? '✓ Copied' : '✓ Copiado'));
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = txt; ta.style.cssText = 'position:fixed;opacity:0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); showToast(currentLang === 'en' ? '✓ Copied' : '✓ Copiado'); } catch(_){}
+    document.body.removeChild(ta);
+  }
+});
+
+/* ─────────────────────────────────────────────────
+   EXIT INTENT (desktop only)
+───────────────────────────────────────────────── */
+(function(){
+  if ('ontouchstart' in window) return;
+  const overlay = document.getElementById('exit-overlay');
+  const closeBtn = document.getElementById('exit-close');
+  if (!overlay) return;
+  let shown = false;
+  function show() {
+    if (shown || sessionStorage.getItem('exit-shown')) return;
+    shown = true;
+    sessionStorage.setItem('exit-shown', '1');
+    overlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function hide() {
+    overlay.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('mouseleave', e => { if (e.clientY <= 5) show(); });
+  closeBtn && closeBtn.addEventListener('click', hide);
+  overlay.addEventListener('click', e => { if (e.target === overlay) hide(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('show')) hide(); });
+})();
 
 /* ─────────────────────────────────────────────────
    PANTALLA CANDADO
